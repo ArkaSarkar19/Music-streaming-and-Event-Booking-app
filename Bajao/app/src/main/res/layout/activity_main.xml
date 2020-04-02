@@ -5,14 +5,50 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/loginPassword"
+            android:hint="*********************"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="99dp" android:layout_marginRight="99dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginLeft="99dp"
+            android:layout_marginStart="99dp" android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/LoginUsername" android:layout_marginBottom="36dp"
+            app:layout_constraintBottom_toTopOf="@+id/LoginButton"/>
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+            android:text="Lets Get Started !!!"
+            android:layout_width="195dp"
+            android:layout_height="38dp"
+            android:id="@+id/loginPageText"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" app:layout_constraintBottom_toTopOf="@+id/LoginUsername"
+            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="50dp"
+            android:layout_marginTop="250dp" android:layout_marginRight="90dp" android:layout_marginEnd="90dp"
+            android:layout_marginLeft="90dp" android:layout_marginStart="90dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:ems="10"
+            android:id="@+id/LoginUsername"
+            android:hint="Username"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginRight="90dp"
+            android:layout_marginEnd="90dp" android:layout_marginLeft="90dp" android:layout_marginStart="90dp"
+            app:layout_constraintTop_toBottomOf="@+id/loginPageText"
+            android:layout_marginBottom="20dp" app:layout_constraintBottom_toTopOf="@+id/loginPassword"/>
+    <Button
+            android:text="LOGIN"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/LoginButton"
+            android:layout_marginEnd="162dp" android:layout_marginRight="162dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginLeft="162dp" android:layout_marginStart="162dp" android:layout_marginTop="26dp"
+            app:layout_constraintTop_toBottomOf="@+id/loginPassword" android:layout_marginBottom="189dp"
+            app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
