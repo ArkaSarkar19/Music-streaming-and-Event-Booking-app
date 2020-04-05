@@ -7,13 +7,19 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
+    public static Parent root;
+    public static Stage window;
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 300, 275));
-        primaryStage.show();
+        window = primaryStage;
+        root = FXMLLoader.load(getClass().getResource("Main.fxml"));
+        window.setTitle("BAJAO application");
+        window.setScene(new Scene(root, 1080, 720));
+        window.setResizable(false);
+        window.show();
+        DBConnection db = new DBConnection();
+        db.getconnction();
     }
 
 
