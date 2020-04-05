@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="300.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginBox">
    <children>
@@ -11,5 +13,15 @@
             <Image url="@Resources/img2.png" />
          </image>
       </ImageView>
+      <TextField layoutX="226.0" layoutY="73.0" opacity="0.16" prefHeight="38.0" prefWidth="334.0" promptText="username">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="226.0" layoutY="150.0" opacity="0.16" prefHeight="38.0" prefWidth="334.0" promptText="**************">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </TextField>
    </children>
 </AnchorPane>

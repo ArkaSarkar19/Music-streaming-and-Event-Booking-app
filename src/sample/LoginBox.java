@@ -31,5 +31,6 @@ public class LoginBox {
         loginwindow.setTitle("Login");
         loginwindow.setResizable(false);
         loginwindow.showAndWait();
+        loginusernname
     }
 }
