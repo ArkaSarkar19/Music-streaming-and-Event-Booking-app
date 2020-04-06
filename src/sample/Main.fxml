@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1080.0" pickOnBounds="true">
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
          <image>
             <Image url="@Resources/img1.png" />
          </image>
       </ImageView>
+      <Button id="mainlogin" fx:id="mainlogin" layoutX="564.0" layoutY="261.0" mnemonicParsing="false" onAction="#handlelogin" opacity="0.77" prefHeight="32.0" prefWidth="238.0" styleClass="mainlogin" stylesheets="@Main.css" text="LOGIN" textFill="#f2f1f1" />
    </children>
 </AnchorPane>

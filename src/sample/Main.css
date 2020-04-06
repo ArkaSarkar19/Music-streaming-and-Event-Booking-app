@@ -5,3 +5,9 @@
     -fx-background-color: #a5ada5;
 }
 
+.mainlogin{
+    -fx-background-color: #0949b8;
+}
+.mainlogin:pressed{
+    -fx-background-color: linear-gradient(#427feb,#0949b8);
+}

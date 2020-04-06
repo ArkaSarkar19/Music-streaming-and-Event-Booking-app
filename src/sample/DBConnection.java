@@ -11,7 +11,6 @@ public class DBConnection {
             Class.forName("com.mysql.jdbc.Driver");
             connection = DriverManager.getConnection(host, user,passowrd);
             System.out.println("Connection made "  + connection);
-            LoginBox.getLogin();
         }
         catch (Exception  e ){
             System.out.println("An error occurred while connecting to DATABASE");

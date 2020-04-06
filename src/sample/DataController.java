@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 public class DataController {
     public Connection connection;
 
@@ -52,7 +51,7 @@ public class DataController {
         return data;
     }
 
-    public void getlogin(String username, String password) throws MyException{
+    public   void validateLogin(String username, String password) throws MyException{
         try{
             DBConnection con = new DBConnection();
             connection = con.getConnection();
@@ -62,7 +61,8 @@ public class DataController {
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
             if(rs.getInt("COUNT(*)") == 0) throw new InvalidUsernamePassowordException("Invalid USERNAME or PASSWORD");
-
+            connection.close();
+            System.out.println("works");
         }
         catch (SQLException e) {
             e.printStackTrace();
