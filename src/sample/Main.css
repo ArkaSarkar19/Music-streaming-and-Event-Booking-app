@@ -1,0 +1,7 @@
+.loginbutton:hover{
+    -fx-background-color: linear-gradient(#818581, #a5ada5);
+}
+.loginbutton:pressed{
+    -fx-background-color: #a5ada5;
+}
+

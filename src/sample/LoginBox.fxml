@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -14,16 +16,21 @@
             <Image url="@Resources/img2.png" />
          </image>
       </ImageView>
-      <TextField id="loginusernname" layoutX="226.0" layoutY="73.0" opacity="0.16" prefHeight="38.0" prefWidth="334.0" promptText="username">
+      <TextField id="loginusernname" layoutX="226.0" layoutY="73.0" opacity="0.25" prefHeight="38.0" prefWidth="334.0" promptText="username">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <TextField id="loginpassword" layoutX="226.0" layoutY="150.0" opacity="0.16" prefHeight="38.0" prefWidth="334.0" promptText="**************">
+      <Button id="loginbutton" layoutX="217.0" layoutY="212.0" mnemonicParsing="false" opacity="0.49" prefHeight="32.0" prefWidth="359.0" styleClass="loginbutton" stylesheets="@Main.css" text="LOGIN">
          <font>
-            <Font size="16.0" />
+            <Font name="System Bold" size="16.0" />
+         </font></Button>
+      <Hyperlink layoutX="367.0" layoutY="262.0" />
+      <Hyperlink layoutX="364.0" layoutY="262.0" text="Sign Up">
+         <font>
+            <Font name="System Bold" size="14.0" />
          </font>
-      </TextField>
-      <Button id="loginbutton" layoutX="218.0" layoutY="225.0" mnemonicParsing="false" opacity="0.03" prefHeight="32.0" prefWidth="359.0" text="Button" />
+      </Hyperlink>
+      <PasswordField id="loginpassword" layoutX="228.0" layoutY="150.0" opacity="0.25" prefHeight="38.0" prefWidth="334.0" promptText="*************" />
    </children>
 </AnchorPane>

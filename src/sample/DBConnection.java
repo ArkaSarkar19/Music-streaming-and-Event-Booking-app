@@ -5,7 +5,7 @@ public class DBConnection {
     private String user = "8WS34TaNi5";
     private String passowrd = "fKJYiyhXGc";
 
-    public Connection getconnction(){
+    public Connection getConnection(){
         Connection connection = null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
