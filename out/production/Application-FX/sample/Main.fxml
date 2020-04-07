@@ -12,6 +12,6 @@
             <Image url="@Resources/img1.png" />
          </image>
       </ImageView>
-      <Button id="mainlogin" fx:id="mainlogin" layoutX="564.0" layoutY="261.0" mnemonicParsing="false" onAction="#handlelogin" opacity="0.77" prefHeight="32.0" prefWidth="238.0" styleClass="mainlogin" stylesheets="@Main.css" text="LOGIN" textFill="#f2f1f1" />
+      <Button id="mainlogin" fx:id="mainlogin" layoutX="810.0" layoutY="51.0" mnemonicParsing="false" onAction="#handlelogin" prefHeight="32.0" prefWidth="238.0" styleClass="mainlogin" stylesheets="@Main.css" text="LOGIN" textFill="#f2f1f1" />
    </children>
 </AnchorPane>

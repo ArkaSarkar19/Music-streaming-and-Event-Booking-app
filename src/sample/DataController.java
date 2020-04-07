@@ -57,12 +57,13 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select COUNT(*) from USER as T  where name = " + username + " and " + password + " = (select password from USER_AUTH as S where S.user_id = T.user_id )";
+            String query = "Select COUNT(*) from `8WS34TaNi5`.USER as T  where name = '" + username + "' and '" + password + "' = (select password from `8WS34TaNi5`.USER_AUTH as S where S.user_id = T.user_id )";
+            System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
             if(rs.getInt("COUNT(*)") == 0) throw new InvalidUsernamePassowordException("Invalid USERNAME or PASSWORD");
             connection.close();
-            System.out.println("works");
+            System.out.println("Login");
         }
         catch (SQLException e) {
             e.printStackTrace();
