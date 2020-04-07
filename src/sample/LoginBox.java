@@ -47,4 +47,15 @@ public class LoginBox {
         loginwindow.setResizable(false);
         loginwindow.showAndWait();
     }
+    public static void getSignup() throws IOException {
+        signupwindow = new Stage();
+        signupwindow.initModality(Modality.APPLICATION_MODAL);
+        Parent login = FXMLLoader.load(LoginBox.class.getResource("Signup.fxml"));
+        Scene scene1 = new Scene(login);
+        signupwindow.setScene(scene1);
+        signupwindow.setTitle("Register");
+        signupwindow.setResizable(false);
+        signupwindow.show();
+
+    }
 }

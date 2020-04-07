@@ -4,9 +4,9 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
 public class Controller {
-    @FXML
-    public static Button mainlogin;
-    @FXML
+    public  Button mainlogin;
+    public Button mainsignup;
+
     public  void handlelogin(){
         try{
             LoginBox.getLogin();
@@ -14,5 +14,14 @@ public class Controller {
         catch(Exception e){
             e.printStackTrace();
         }
+    }
+
+    public void handlesignup(){
+       try{
+           LoginBox.getSignup();
+       }
+       catch (Exception e){
+           e.printStackTrace();
+       }
     }
 }
