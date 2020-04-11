@@ -56,6 +56,5 @@ public class LoginBox {
         signupwindow.setTitle("Register");
         signupwindow.setResizable(false);
         signupwindow.show();
-
     }
 }

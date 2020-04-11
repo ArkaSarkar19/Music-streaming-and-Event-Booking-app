@@ -1,14 +1,95 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="sample.Main"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="675.0" prefWidth="450.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Main">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="550.0" focusTraversable="true" pickOnBounds="true">
+         <image>
+            <Image url="@Resources/img3.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="signupname" layoutX="146.0" layoutY="186.0" opacity="0.55" prefHeight="34.0" prefWidth="257.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="signupusername" layoutX="146.0" layoutY="236.0" opacity="0.55" prefHeight="34.0" prefWidth="257.0" promptText="What should we call you?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signupemail" layoutX="146.0" layoutY="285.0" opacity="0.55" prefHeight="34.0" prefWidth="257.0" promptText="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signuppassword" layoutX="146.0" layoutY="333.0" opacity="0.55" prefHeight="34.0" prefWidth="257.0" promptText="Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signuppassword1" layoutX="146.0" layoutY="388.0" opacity="0.55" prefHeight="34.0" prefWidth="257.0" promptText="Confirm Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <MenuButton layoutX="234.0" layoutY="478.0" mnemonicParsing="false" opacity="0.44" prefHeight="34.0" prefWidth="82.0" text="Month">
+        <items>
+          <MenuItem mnemonicParsing="false" text="January" />
+          <MenuItem mnemonicParsing="false" text="February" />
+            <MenuItem mnemonicParsing="false" text="March" />
+            <MenuItem mnemonicParsing="false" text="April" />
+            <MenuItem mnemonicParsing="false" text="May" />
+            <MenuItem mnemonicParsing="false" text="June" />
+            <MenuItem mnemonicParsing="false" text="July" />
+            <MenuItem mnemonicParsing="false" text="August" />
+            <MenuItem mnemonicParsing="false" text="September" />
+            <MenuItem mnemonicParsing="false" text="October" />
+            <MenuItem mnemonicParsing="false" text="November" />
+            <MenuItem mnemonicParsing="false" text="December" />
+        </items>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </MenuButton>
+      <Text layoutX="149.0" layoutY="471.0" opacity="0.73" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="152.38311195373535" />
+      <TextField layoutX="146.0" layoutY="478.0" prefHeight="34.0" prefWidth="82.0" promptText="Year">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="329.0" layoutY="478.0" prefHeight="34.0" prefWidth="82.0" promptText="Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <RadioButton layoutX="144.0" layoutY="534.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="82.0" text="Male">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="234.0" layoutY="534.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="82.0" text="Female">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton layoutX="329.0" layoutY="534.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="82.0" text="Other">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="signupcountry" layoutX="146.0" layoutY="570.0" opacity="0.55" prefHeight="34.0" prefWidth="257.0" promptText="Country">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+   </children>
 </AnchorPane>
