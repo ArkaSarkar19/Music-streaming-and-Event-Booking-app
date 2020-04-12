@@ -1,5 +1,5 @@
 @font-face {
-    src: url("Resources/SERIO___.TTF");
+    /*src: url("Resources/SERIO___.TTF");*/
 }
 .loginbutton:hover{
     -fx-background-color: linear-gradient(#818581, #a5ada5);
