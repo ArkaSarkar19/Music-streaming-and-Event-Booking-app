@@ -69,4 +69,23 @@ public class DataController {
             e.printStackTrace();
         }
     }
+
+    public void checkUser(String name, String email) throws  MyException{
+        try{
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "Select COUNT(*) from `8WS34TaNi5`.USER where name = '" + name + "'or email = '" + email +"'";
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+            if(rs.getInt("COUNT(*)") == 1) throw new UserExistsException("User Exists");
+            connection.close();
+
+        }
+        catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

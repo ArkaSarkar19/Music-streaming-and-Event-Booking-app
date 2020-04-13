@@ -7,8 +7,12 @@ import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+import java.io.IOException;
 import java.math.*;
-import java.awt.*;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 public class Controller {
     public  Button mainlogin;
@@ -35,7 +39,6 @@ public class Controller {
     public Text a7;
     public Text a8;
 
-
     public  void handlelogin(){
         try{
             LoginBox.getLogin();
@@ -49,26 +52,117 @@ public class Controller {
        try{
            LoginBox.getSignup();
        }
-       catch (Exception e){
+       catch ( IOException e){
            e.printStackTrace();
        }
     }
 
-    public void handlemainsignup(){
-        String name = signupname.getText().toString();
-        if(name.equals("")) a1.setText("Required ! ");
-        String username = signupusername.getText().toString();
-        if(username.equals("")) a2.setText("Required ! ");
-        String password = signuppassword.getText().toString();
-        if(password.equals("")) a4.setText("Required ! ");
-        String c_password = signuppassword1.getText().toString();
-        if(c_password.equals("")) a5.setText("Required ! ");
-        String country = signupcountry.getText().toString();
-        if(country.equals("")) a8.setText("Required ! ");
-        String email = signupemail.getText().toString();
-        if(email.equals("")) a3.setText("Required ! ");
-        int r = (int)((Math.random()*9000000)+1000000);
-        System.out.println(r);
-        System.out.println(name.equals(""));
+    public void handlemainsignup() throws MyException {
+        try {
+            boolean done = true;
+            String name = signupname.getText().toString();
+            if (name.equals("")) {
+                a1.setText("Required ! ");
+                done = false;
+            } else a1.setText("");
+            String username = signupusername.getText().toString();
+            if (username.equals("")) {
+                a2.setText("Required ! ");
+                done = false;
+            } else a2.setText("");
+            String password = signuppassword.getText().toString();
+            if (password.equals("")) {
+                a4.setText("Required ! ");
+                done = false;
+            } else a4.setText("");
+            String c_password = signuppassword1.getText().toString();
+            if (c_password.equals("")) {
+                a5.setText("Required ! ");
+                done = false;
+            } else a5.setText("");
+            if (!password.equals(c_password)) {
+                a5.setText("Passwords do not match");
+                a4.setText("Passwords do not match");
+                done = false;
+            }
+            String country = signupcountry.getText().toString();
+            if (country.equals("")) {
+                a8.setText("Required ! ");
+                done = false;
+            } else a8.setText("");
+            String email = signupemail.getText().toString();
+            if (email.equals("")) {
+                a3.setText("Required ! ");
+                done = false;
+            } else a3.setText("");
+            String month = signupmonth.getText().toString();
+            String year = signupyear.getText().toString();
+            String date = signupdate.getText().toString();
+            String gender = "";
+            if (month.equals("      Month") || year.equals("") || date.equals("")) {
+                a6.setText("Required ! ");
+                done = false;
+            } else a6.setText("");
+            if (gendermale.isSelected() || genderfemale.isSelected() || genderother.isSelected()) {
+                if (gendermale.isSelected()) gender = "Male";
+                else if (genderfemale.isSelected()) gender = "Female";
+                else if (genderother.isSelected()) gender = "Other";
+                else ;
+                a7.setText("");
+            } else {
+                a7.setText("Required ! ");
+                done = false;
+            }
+            if (!done) throw new InvalidSignupException("Something went wrong during signup");
+            DataController db = new DataController();
+            db.checkUser(name,email);
+            int r;
+            while(true){
+                r = (int) ((Math.random() * 9000000) + 1000000);
+                try{
+                    DBConnection con = new DBConnection();
+                    Connection connection = con.getConnection();
+                    if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+                    Statement stmt = connection.createStatement();
+                    String query = "insert into `8WS34TaNi5`.USER values(" + r + ",'','','','2006-09-01')";
+                    System.out.println(query);
+                    connection.close();
+                    break;
+                }
+                catch (MyException e){
+                    System.out.println(e.getMessage());
+                }
+                catch (SQLException e) {
+                    e.printStackTrace();
+
+                }
+            }
+            System.out.println(r);
+            
+
+
+        }
+        catch (InvalidSignupException e){
+            System.out.println(e.getMessage());
+        }
+        catch (UserExistsException e){
+            System.out.println(e.getMessage());
+        }
+
     }
+
+    public void handlemonthsignup1(){signupmonth.setText("January");}
+    public void handlemonthsignup2(){signupmonth.setText("February");}
+    public void handlemonthsignup3(){signupmonth.setText("March");}
+    public void handlemonthsignup4(){signupmonth.setText("April");}
+    public void handlemonthsignup5(){signupmonth.setText("March");}
+    public void handlemonthsignup6(){signupmonth.setText("May");}
+    public void handlemonthsignup7(){signupmonth.setText("June");}
+    public void handlemonthsignup8(){signupmonth.setText("July");}
+    public void handlemonthsignup9(){signupmonth.setText("September");}
+    public void handlemonthsignup10(){signupmonth.setText("October");}
+    public void handlemonthsignup11(){signupmonth.setText("November");}
+    public void handlemonthsignup12(){signupmonth.setText("December");}
+
+
 }

@@ -23,3 +23,16 @@ class InvalidUsernamePassowordException extends  MyException{
         super(message);
     }
 }
+
+class InvalidSignupException extends  MyException{
+    public InvalidSignupException(String message) {
+        super(message);
+    }
+}
+
+class UserExistsException extends MyException{
+
+    public UserExistsException(String message) {
+        super(message);
+    }
+}
