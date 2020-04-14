@@ -43,7 +43,7 @@
             <Font size="14.0" />
          </font>
       </PasswordField>
-      <MenuButton fx:id="signupmonth" layoutX="217.0" layoutY="477.0" mnemonicParsing="false" opacity="0.44" prefHeight="34.0" prefWidth="116.0" text="      Month" textAlignment="CENTER">
+      <MenuButton fx:id="signupmonth" layoutX="233.0" layoutY="477.0" mnemonicParsing="false" opacity="0.44" prefHeight="34.0" prefWidth="82.0" text="Month" textAlignment="CENTER">
         <items>
           <MenuItem fx:id="action1" mnemonicParsing="false" onAction="#handlemonthsignup1" text="January" />
           <MenuItem fx:id="action2" mnemonicParsing="false" onAction="#handlemonthsignup2" text="February" />
@@ -62,13 +62,13 @@
             <Font size="14.0" />
          </font>
       </MenuButton>
-      <Text layoutX="135.0" layoutY="472.0" opacity="0.73" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="152.38311195373535" />
-      <TextField fx:id="signupyear" layoutX="129.0" layoutY="477.0" prefHeight="34.0" prefWidth="82.0" promptText="Year">
+      <Text layoutX="147.0" layoutY="471.0" opacity="0.73" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="152.38311195373535" />
+      <TextField fx:id="signupyear" layoutX="147.0" layoutY="477.0" prefHeight="34.0" prefWidth="76.0" promptText="Year">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="signupdate" layoutX="340.0" layoutY="477.0" prefHeight="34.0" prefWidth="82.0" promptText="Date">
+      <TextField fx:id="signupdate" layoutX="321.0" layoutY="477.0" prefHeight="34.0" prefWidth="82.0" promptText="Date">
          <font>
             <Font size="14.0" />
          </font>
@@ -104,7 +104,7 @@
       <Text fx:id="a3" fill="#f80808" layoutX="423.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
       <Text fx:id="a4" fill="#f80808" layoutX="423.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
       <Text fx:id="a5" fill="#f80808" layoutX="423.0" layoutY="409.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
-      <Text fx:id="a6" fill="#f80808" layoutX="439.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a6" fill="#f80808" layoutX="423.0" layoutY="498.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
       <Text fx:id="a7" fill="#f80808" layoutX="423.0" layoutY="548.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
       <Text fx:id="a8" fill="#f80808" layoutX="423.0" layoutY="591.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
    </children>

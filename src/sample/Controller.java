@@ -99,10 +99,11 @@ public class Controller {
             String year = signupyear.getText().toString();
             String date = signupdate.getText().toString();
             String gender = "";
-            if (month.equals("      Month") || year.equals("") || date.equals("")) {
+            if (month.equals("Month") || year.equals("") || date.equals("")) {
                 a6.setText("Required ! ");
                 done = false;
             } else a6.setText("");
+
             if (gendermale.isSelected() || genderfemale.isSelected() || genderother.isSelected()) {
                 if (gendermale.isSelected()) gender = "Male";
                 else if (genderfemale.isSelected()) gender = "Female";
@@ -124,7 +125,7 @@ public class Controller {
                     Connection connection = con.getConnection();
                     if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
                     Statement stmt = connection.createStatement();
-                    String query = "insert into `8WS34TaNi5`.USER values(" + r + ",'','','','2006-09-01')";
+                    String query = "insert into `8WS34TaNi5`.USER values(" + r + ",'','','','2006-09-01','')";
                     System.out.println(query);
                     connection.close();
                     break;
@@ -138,7 +139,13 @@ public class Controller {
                 }
             }
             System.out.println(r);
-            
+            System.out.println(year+"-"+signupmonth.getText().toString()+"-"+date);
+            User new_user = new User(r,name,country,email,year+"-"+signupmonth.getText().toString()+"-"+date,gender);
+            new_user.checkFormatting();
+            UserAuth newUserAuth = new UserAuth(r,password);
+            newUserAuth.checkFormatting();
+            DataController db1 = new DataController();
+            db1.addUser(new_user,newUserAuth);
 
 
         }
@@ -148,21 +155,30 @@ public class Controller {
         catch (UserExistsException e){
             System.out.println(e.getMessage());
         }
+        catch (InvalidEmailException e ){
+            System.out.println(e.getMessage());
+        }
+        catch (InvalidPasswordException e){
+            System.out.println(e.getMessage());
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
 
     }
 
-    public void handlemonthsignup1(){signupmonth.setText("January");}
-    public void handlemonthsignup2(){signupmonth.setText("February");}
-    public void handlemonthsignup3(){signupmonth.setText("March");}
-    public void handlemonthsignup4(){signupmonth.setText("April");}
-    public void handlemonthsignup5(){signupmonth.setText("March");}
-    public void handlemonthsignup6(){signupmonth.setText("May");}
-    public void handlemonthsignup7(){signupmonth.setText("June");}
-    public void handlemonthsignup8(){signupmonth.setText("July");}
-    public void handlemonthsignup9(){signupmonth.setText("September");}
-    public void handlemonthsignup10(){signupmonth.setText("October");}
-    public void handlemonthsignup11(){signupmonth.setText("November");}
-    public void handlemonthsignup12(){signupmonth.setText("December");}
+    public void handlemonthsignup1(){signupmonth.setText("01");}
+    public void handlemonthsignup2(){signupmonth.setText("02");}
+    public void handlemonthsignup3(){signupmonth.setText("03");}
+    public void handlemonthsignup4(){signupmonth.setText("04");}
+    public void handlemonthsignup5(){signupmonth.setText("05");}
+    public void handlemonthsignup6(){signupmonth.setText("06");}
+    public void handlemonthsignup7(){signupmonth.setText("07");}
+    public void handlemonthsignup8(){signupmonth.setText("08");}
+    public void handlemonthsignup9(){signupmonth.setText("09");}
+    public void handlemonthsignup10(){signupmonth.setText("10");}
+    public void handlemonthsignup11(){signupmonth.setText("11");}
+    public void handlemonthsignup12(){signupmonth.setText("12");}
 
 
 }

@@ -88,4 +88,18 @@ public class DataController {
             e.printStackTrace();
         }
     }
+
+    public void addUser(User user, UserAuth userAuth) throws MyException, SQLException {
+        DBConnection con = new DBConnection();
+        connection = con.getConnection();
+        if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+        Statement stmt = connection.createStatement();
+        String query = "insert into `8WS34TaNi5`.USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "')";
+        System.out.println(query);
+        stmt.executeUpdate(query);
+        query = "insert into `8WS34TaNi5`.USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
+        System.out.println(query);
+        stmt.executeUpdate(query);
+        connection.close();
+    }
 }
