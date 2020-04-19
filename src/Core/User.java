@@ -1,4 +1,7 @@
 package Core;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.regex.Pattern;
 import Exception.*;
 import java.util.regex.Pattern;
@@ -23,6 +26,16 @@ public class User{
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+ "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
         Pattern pat = Pattern.compile(emailRegex);
         if(!pat.matcher(email).matches()) throw new InvalidEmailException("Enter a correct email address");
+
+        try {
+            DateFormat df = new SimpleDateFormat("yyyy-mm-dd");
+            df.setLenient(false);
+            df.parse(DOB);
+        }
+        catch (ParseException e){
+            throw new IncorrectDateException("Enter a valid date");
+        }
+
     }
 
     public int getUser_id() {

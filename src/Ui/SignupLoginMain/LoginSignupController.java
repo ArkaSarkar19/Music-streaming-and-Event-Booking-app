@@ -17,6 +17,7 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.text.ParseException;
 
 public class LoginSignupController {
     public  Button mainlogin;
@@ -150,6 +151,8 @@ public class LoginSignupController {
             newUserAuth.checkFormatting();
             DataController db1 = new DataController();
             db1.addUser(new_user,newUserAuth);
+            System.out.println("Closing window");
+            LoginBox.signupwindow.close();
 
 
         }
@@ -163,6 +166,9 @@ public class LoginSignupController {
             System.out.println(e.getMessage());
         }
         catch (InvalidPasswordException e){
+            System.out.println(e.getMessage());
+        }
+        catch (IncorrectDateException e){
             System.out.println(e.getMessage());
         }
         catch (SQLException e){

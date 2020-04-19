@@ -102,6 +102,7 @@ public class DataController {
         query = "insert into `8WS34TaNi5`.USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
         System.out.println(query);
         stmt.executeUpdate(query);
+        System.out.println("Successfull");
         connection.close();
     }
 }

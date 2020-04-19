@@ -93,9 +93,9 @@
             <Font size="14.0" />
          </font>
       </TextField>
-      <ImageView fitHeight="169.0" fitWidth="324.0" layoutX="139.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="169.0" fitWidth="324.0" layoutX="113.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Resources/logo.png" />
+            <Image url="@../../Resources/logo.png" />
          </image>
       </ImageView>
       <Button id="signupbutton" fx:id="signupbutton" layoutX="136.0" layoutY="630.0" mnemonicParsing="false" onAction="#handlemainsignup" prefHeight="42.0" prefWidth="278.0" styleClass="signupbutton" stylesheets="@Main.css" text="SIGN UP" />
