@@ -3,14 +3,47 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/sample/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/LoginBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/sample/LoginBox.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/LoginBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/LoginBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sample/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/sample/Main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application-FX.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Application-FX.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/ConnectionInvalidException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/DBConnection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/DataController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/InvalidTableNameException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/InvalidUsernamePassowordException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/LoginBox.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/LoginBox.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/MyException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/8-bitwonder.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/QuarcaNormBold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/SERIO___.TTF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/oblivion-font.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Resources/sample_vid1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/sample/Signup.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DBConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/DataController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/LoginBox.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/LoginBox.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/LoginSignupController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/MyException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/8-bitwonder.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/QuarcaNormBold.otf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/SERIO___.TTF" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/img1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/img2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/img3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/oblivion-font.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Resources/sample_vid1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/Signup.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sample/UtilStructures.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,8 +98,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -102,7 +135,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2/jfoenix-8.0.8.jar!/" />
+    <property name="last_opened_file_path" value="C:/Program Files/Java/javafx-sdk-11.0.2/jfoenix-9.0.8.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
@@ -110,7 +143,7 @@
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
       <module name="" />
       <option name="MAIN_CLASS_NAME" />
@@ -136,8 +169,22 @@
       <Host>localhost</Host>
       <Port>5050</Port>
     </configuration>
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Ui.SignupLoginMain.Main" />
+      <module name="Application-FX" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Ui.SignupLoginMain.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="sample.Main" />
+      <option name="MAIN_CLASS_NAME" value="Ui.SignupLoginMain.Main" />
       <module name="Application-FX" />
       <option name="VM_PARAMETERS" value="--module-path &quot;C:\Program Files\Java\javafx-sdk-11.0.2\lib&quot; --add-modules=javafx.controls,javafx.fxml" />
       <extension name="coverage">
@@ -145,6 +192,16 @@
           <option name="PATTERN" value="sample.*" />
           <option name="ENABLED" value="true" />
         </pattern>
+      </extension>
+      <extension name="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
       </extension>
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -189,6 +246,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Main" />
+      <item itemvalue="Application.Main (1)" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main (1)" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -206,7 +272,15 @@
       <workItem from="1586071435291" duration="15762000" />
       <workItem from="1586161169821" duration="8498000" />
       <workItem from="1586178148324" duration="4370000" />
-      <workItem from="1586260237538" duration="4260000" />
+      <workItem from="1586260237538" duration="4324000" />
+      <workItem from="1586619460507" duration="6162000" />
+      <workItem from="1586688049444" duration="13332000" />
+      <workItem from="1586793102645" duration="10115000" />
+      <workItem from="1586870397813" duration="8705000" />
+      <workItem from="1586984017795" duration="114000" />
+      <workItem from="1587148673944" duration="1280000" />
+      <workItem from="1587281706109" duration="6734000" />
+      <workItem from="1587300336706" duration="2328000" />
     </task>
     <servers />
   </component>
@@ -218,62 +292,74 @@
     <option name="INCLUDE_TEXT_INTO_SHELF" value="false" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1586072594814">
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1587302667512">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1586072594814" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1587302667512" />
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1586176701830">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="574" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1586176701830" />
+    <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog" timestamp="1587302665432">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1587302665432" />
+    <state x="611" y="309" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1587302020373">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="611" y="309" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages/0.0.1536.824@0.0.1536.824" timestamp="1587302020373" />
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1586289654350">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586289654350" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1586179129263">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587295867802">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1586179129263" />
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom" timestamp="1586290027561">
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587295867802" />
+    <state width="1493" height="218" key="GridCell.Tab.0.bottom" timestamp="1587302739160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586290027561" />
-    <state width="1493" height="210" key="GridCell.Tab.0.center" timestamp="1586290027561">
+    <state width="1493" height="218" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587302739160" />
+    <state width="1493" height="218" key="GridCell.Tab.0.center" timestamp="1587302739160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1586290027561" />
-    <state width="1493" height="210" key="GridCell.Tab.0.left" timestamp="1586290027561">
+    <state width="1493" height="218" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587302739160" />
+    <state width="1493" height="218" key="GridCell.Tab.0.left" timestamp="1587302739160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1586290027561" />
-    <state width="1493" height="210" key="GridCell.Tab.0.right" timestamp="1586290027561">
+    <state width="1493" height="218" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587302739160" />
+    <state width="1493" height="218" key="GridCell.Tab.0.right" timestamp="1587302739160">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="210" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1586290027561" />
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1586260252956">
+    <state width="1493" height="218" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587302739160" />
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1586719658556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586260252956" />
-    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1586260252956">
+    <state width="1493" height="261" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1586719658556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.center" timestamp="1586719658556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586260252956" />
-    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1586260252955">
+    <state width="1493" height="261" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1586719658556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.left" timestamp="1586719658556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586260252955" />
-    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1586260252956">
+    <state width="1493" height="261" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1586719658556" />
+    <state width="1493" height="261" key="GridCell.Tab.1.right" timestamp="1586719658556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586260252956" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1586288100675">
+    <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586719658556" />
+    <state x="249" y="0" key="SettingsEditor" timestamp="1587295875522">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1586288100675" />
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1586250211637">
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587295875522" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587300348182">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1586250211637" />
+    <state x="465" y="236" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587300348182" />
+    <state x="209" y="136" key="new project wizard" timestamp="1586984138121">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="209" y="136" key="new project wizard/0.0.1536.824@0.0.1536.824" timestamp="1586984138121" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
