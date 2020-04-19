@@ -14,7 +14,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class Controller {
+public class LoginSignupController {
     public  Button mainlogin;
     public Button mainsignup;
     public TextField signupname;

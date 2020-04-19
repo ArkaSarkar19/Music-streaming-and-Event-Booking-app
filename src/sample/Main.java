@@ -16,8 +16,8 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception {
         window = primaryStage;
         root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        window.setTitle("BAJAO application");
-        window.setScene(new Scene(root, 1080, 720));
+        window.setTitle("BAJAO");
+        window.setScene(new Scene(root, 1280, 720));
         window.setResizable(false);
         window.show();
     }
