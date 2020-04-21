@@ -1,19 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Database/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Database/DataController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Ui/SignupLoginMain/LoginSignupController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Ui/SignupLoginMain/LoginSignupController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Ui/SignupLoginMain/Signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Ui/SignupLoginMain/Signup.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Database/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DataController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/MainPage/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/MainPage/MainScreen.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/ProfilePage/ProfilePage.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/ProfilePage/ProfilePage.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginBox.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginBox.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginBox.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginSignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginSignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/Signup.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/Signup.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -250,7 +238,7 @@
       <workItem from="1587148673944" duration="1280000" />
       <workItem from="1587281706109" duration="6734000" />
       <workItem from="1587300336706" duration="7469000" />
-      <workItem from="1587378530987" duration="10695000" />
+      <workItem from="1587378530987" duration="10927000" />
     </task>
     <servers />
   </component>
