@@ -53,13 +53,13 @@ public class DataController {
         return data;
     }
 
-    public   void validateLogin(String username, String password) throws MyException{
+    public   void validateLogin(String email, String password) throws MyException{
         try{
             DBConnection con = new DBConnection();
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select COUNT(*) from `8WS34TaNi5`.USER as T  where name = '" + username + "' and '" + password + "' = (select password from `8WS34TaNi5`.USER_AUTH as S where S.user_id = T.user_id )";
+            String query = "Select COUNT(*) from `8WS34TaNi5`.USER as T  where email = '" + email + "' and '" + password + "' = (select password from `8WS34TaNi5`.USER_AUTH as S where S.user_id = T.user_id )";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
@@ -78,7 +78,7 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select COUNT(*) from `8WS34TaNi5`.USER where name = '" + name + "'or email = '" + email +"'";
+            String query = "Select COUNT(*) from `8WS34TaNi5`.USER where binary email = '" + email +"'";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.next();

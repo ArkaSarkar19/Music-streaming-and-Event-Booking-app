@@ -16,21 +16,21 @@
             <Image url="@../../Resources/homepage.png" />
          </image>
       </ImageView>
-      <TextField id="loginusername" layoutX="513.0" layoutY="376.0" opacity="0.25" prefHeight="38.0" prefWidth="267.0" promptText="username">
+      <TextField id="loginusername" fx:id="mainLoginUsername" layoutX="513.0" layoutY="376.0" opacity="0.25" prefHeight="38.0" prefWidth="267.0" promptText="Email">
          <font>
             <Font size="16.0" />
          </font>
       </TextField>
-      <Button id="loginbutton" layoutX="518.0" layoutY="480.0" mnemonicParsing="false" opacity="0.49" prefHeight="39.0" prefWidth="259.0" styleClass="loginbutton" stylesheets="@Main.css" text="LOGIN">
+      <Button id="loginbutton" fx:id="mainlogin" layoutX="518.0" layoutY="480.0" mnemonicParsing="false" opacity="0.49" prefHeight="39.0" prefWidth="259.0" styleClass="loginbutton" stylesheets="@Main.css" text="LOGIN">
          <font>
             <Font name="System Bold" size="16.0" />
          </font></Button>
       <Hyperlink layoutX="367.0" layoutY="262.0" />
-      <Hyperlink layoutX="617.0" layoutY="545.0" text="Sign Up">
+      <Hyperlink fx:id="mainLoginSignup" layoutX="617.0" layoutY="545.0" text="Sign Up">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Hyperlink>
-      <PasswordField id="loginpassword" layoutX="513.0" layoutY="426.0" opacity="0.25" prefHeight="38.0" prefWidth="267.0" promptText="*************" />
+      <PasswordField id="loginpassword" fx:id="mainLoginPassword" layoutX="513.0" layoutY="426.0" opacity="0.25" prefHeight="38.0" prefWidth="267.0" promptText="*************" />
    </children>
 </AnchorPane>

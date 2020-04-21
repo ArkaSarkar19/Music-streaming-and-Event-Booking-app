@@ -63,12 +63,12 @@
          </font>
       </MenuButton>
       <Text fill="#fcfcfc" layoutX="524.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="152.38311195373535" />
-      <TextField fx:id="signupyear" layoutX="524.0" layoutY="456.0" prefHeight="34.0" prefWidth="66.0" promptText="Year" text="Y">
+      <TextField fx:id="signupyear" layoutX="524.0" layoutY="456.0" prefHeight="34.0" prefWidth="66.0" promptText="Year">
          <font>
             <Font size="14.0" />
          </font>
       </TextField>
-      <TextField fx:id="signupdate" layoutX="682.0" layoutY="456.0" prefHeight="34.0" prefWidth="66.0" promptText="Date" text="D">
+      <TextField fx:id="signupdate" layoutX="682.0" layoutY="456.0" prefHeight="34.0" prefWidth="66.0" promptText="Date">
          <font>
             <Font size="14.0" />
          </font>

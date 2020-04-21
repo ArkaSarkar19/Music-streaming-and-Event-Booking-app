@@ -157,7 +157,7 @@ public class LoginSignupController {
             newUserAuth.checkFormatting();
             DataController db1 = new DataController();
             db1.addUser(new_user,newUserAuth);
-
+            LoginBox.signupwindow.close();
 
         }
         catch (InvalidSignupException e){

@@ -1,6 +1,7 @@
 package Ui.SignupLoginMain;
 import Exception.*;
 import Database.DataController;
+import Ui.MainPage.MainScreenController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -24,15 +25,14 @@ public class LoginBox {
         Scene scene1 = new Scene(login, 1280,720);
         Button loginbutton = (Button)scene1.lookup("#loginbutton");
         loginbutton.setOnAction(event -> {
-            TextField user = (TextField)scene1.lookup("#loginusername");
+            TextField email = (TextField)scene1.lookup("#loginusername"); //this is actaully user email
             PasswordField password = (PasswordField)scene1.lookup("#loginpassword");
             try{
                 DataController cont = new DataController();
-                cont.validateLogin(user.getText(),password.getText());
+                cont.validateLogin(email.getText(),password.getText());
                 System.out.println("SuccessFull");
                 loginwindow.close();
-
-
+                MainScreenController.loadWindow(email.getText(),password.getText());
 
             } catch (MyException e) {
                 System.out.println("Error occured during login");
