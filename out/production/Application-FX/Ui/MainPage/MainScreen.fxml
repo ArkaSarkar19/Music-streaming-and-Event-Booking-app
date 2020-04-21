@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@mainPageStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.SignupLoginMain.MainScreen">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../Resources/bg.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="79.0" fitWidth="150.0" layoutX="26.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="40.0">
+         <image>
+            <Image url="@../../Resources/logo.png" />
+         </image>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="25.0" layoutY="159.0" mouseTransparent="true" prefHeight="153.0" prefWidth="150.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Home" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Search" />
+            <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="185.0" text="Your Library" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <Label layoutX="65.0" layoutY="338.0" text="Playlists" textFill="#eeecec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <VBox layoutX="25.0" layoutY="378.0" prefHeight="99.0" prefWidth="150.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" text="Add Playlist" />
+            <Button mnemonicParsing="false" prefHeight="39.0" prefWidth="153.0" text="Your Playlists" />
+         </children>
+      </VBox>
+      <Label layoutX="70.0" layoutY="499.0" text="Tickets" textFill="#eeecec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="46.0" fitWidth="52.0" layoutX="1047.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="1047.0" AnchorPane.rightAnchor="211.0" AnchorPane.topAnchor="15.0">
+         <image>
+            <Image url="@../../Resources/user.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="616.0" fitWidth="1047.0" layoutX="202.0" layoutY="77.0" opacity="0.11" pickOnBounds="true" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="77.0">
+         <image>
+            <Image url="@../../Resources/grey-bg.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1101.0" layoutY="18.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="160.0" text="User Name" AnchorPane.leftAnchor="1101.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="18.0" />
+      <HBox layoutX="230.0" layoutY="526.0" prefHeight="140.0" prefWidth="1013.0" spacing="15.0" stylesheets="@mainPageStyle.css" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="526.0">
+         <children>
+            <ImageView fitHeight="152.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Albums/album1.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="153.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Albums/album2.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Albums/album3.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Albums/album4.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Albums/akbum5.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Albums/album6.jpg" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Label layoutX="230.0" layoutY="488.0" text="Recently Played" textFill="#eeecec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="230.0" layoutY="326.0" prefHeight="140.0" prefWidth="1013.0" spacing="15.0" stylesheets="@mainPageStyle.css">
+         <children>
+            <ImageView fitHeight="152.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Charts/chart1.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="153.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Charts/chart2.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Charts/chart3.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Charts/chart4.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Charts/chart5.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Charts/chart6.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Label layoutX="230.0" layoutY="288.0" text="Charts" textFill="#eeecec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <HBox layoutX="230.0" layoutY="129.0" prefHeight="140.0" prefWidth="1013.0" spacing="15.0" stylesheets="@mainPageStyle.css">
+         <children>
+            <ImageView fitHeight="152.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Best%20of%20artists/artist1.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="153.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Best%20of%20artists/artist2.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Best%20of%20artists/artist3.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Best%20of%20artists/artist4.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Resources/Best%20of%20artists/artist5.PNG" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+               <image>
+                  <Image url="@../../Resources/Best%20of%20artists/artist6.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <Label layoutX="230.0" layoutY="91.0" text="Best of Artists" textFill="#eeecec">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

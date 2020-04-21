@@ -1,6 +1,16 @@
 @font-face {
     /*src: url("Resources/SERIO___.TTF");*/
 }
+
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : #B2B2B2;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+
 .loginbutton:hover{
     -fx-background-color: linear-gradient(#818581, #a5ada5);
 }
@@ -37,4 +47,13 @@
 }
 .signupbutton:pressed{
     -fx-background-color: #1aa808;
+}
+
+.button{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: Transparent;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
 }

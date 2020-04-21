@@ -5,11 +5,15 @@ import Database.DBConnection;
 import Database.DataController;
 import Exception.*;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.MenuButton;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.math.*;
@@ -17,9 +21,11 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.text.ParseException;
 
 public class LoginSignupController {
+
+    public Stage window;
+
     public  Button mainlogin;
     public Button mainsignup;
     public TextField signupname;
@@ -151,8 +157,6 @@ public class LoginSignupController {
             newUserAuth.checkFormatting();
             DataController db1 = new DataController();
             db1.addUser(new_user,newUserAuth);
-            System.out.println("Closing window");
-            LoginBox.signupwindow.close();
 
 
         }
@@ -166,9 +170,6 @@ public class LoginSignupController {
             System.out.println(e.getMessage());
         }
         catch (InvalidPasswordException e){
-            System.out.println(e.getMessage());
-        }
-        catch (IncorrectDateException e){
             System.out.println(e.getMessage());
         }
         catch (SQLException e){
