@@ -23,10 +23,32 @@ public class LoginBox {
 
 
     public static void getLogin() throws IOException {
+        SaveFileCache save = null;
+        try {
+            save = deserialize();
+        } catch (ClassNotFoundException e) {
+            System.out.println("Could not Deserialize1");
+            e.printStackTrace();
+        } catch (FileNotFoundException e) {
+            System.out.println("Could not Deserialize2");
+
+            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Could not Deserialize3");
+
+            e.printStackTrace();
+        }
+
         loginwindow = new Stage();
         loginwindow.initModality(Modality.APPLICATION_MODAL);
         Parent login = FXMLLoader.load(LoginBox.class.getResource("LoginBox.fxml"));
         Scene scene1 = new Scene(login, 1280,720);
+        if(save !=null && save.getStatus()){
+            TextField email = (TextField)scene1.lookup("#loginusername"); //this is actaully user email
+            PasswordField password = (PasswordField)scene1.lookup("#loginpassword");
+            email.setText(save.getUserEmail());
+            password.setText(save.getUserPassword());
+        }
         Button loginbutton = (Button)scene1.lookup("#loginbutton");
         loginbutton.setOnAction(event -> {
             TextField email = (TextField)scene1.lookup("#loginusername"); //this is actaully user email
@@ -34,9 +56,9 @@ public class LoginBox {
             try{
                 DataController cont = new DataController();
                 User user;
-                SaveFileCache save = null;
+                SaveFileCache save2 = null;
                 try {
-                    save = deserialize();
+                    save2 = deserialize();
                 } catch (ClassNotFoundException e) {
                     System.out.println("Could not Deserialize1");
                     e.printStackTrace();
@@ -49,10 +71,10 @@ public class LoginBox {
 
                     e.printStackTrace();
                 }
-                if(save == null || !save.getStatus()) user = cont.validateLogin(email.getText(),password.getText());
+                if(save2 == null || !save2.getStatus()) user = cont.validateLogin(email.getText(),password.getText());
                 else{
 
-                    user = cont.validateLogin(save.getUserEmail(),save.getUserPassword());
+                    user = cont.validateLogin(save2.getUserEmail(),save2.getUserPassword());
                 }
 //                user = cont.validateLogin(email.getText(),password.getText());
 
