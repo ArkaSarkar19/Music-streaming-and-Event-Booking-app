@@ -37,6 +37,11 @@ public class User{
         }
 
     }
+    public void display(){
+        System.out.println(user_id + " " + name + " " + country + " " + email + " " + DOB + " " + gender);
+
+    }
+
 
     public int getUser_id() {
         return user_id;

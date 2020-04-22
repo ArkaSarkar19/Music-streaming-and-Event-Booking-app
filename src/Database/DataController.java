@@ -53,23 +53,28 @@ public class DataController {
         return data;
     }
 
-    public   void validateLogin(String email, String password) throws MyException{
+    public   User validateLogin(String email, String password) throws MyException{
         try{
             DBConnection con = new DBConnection();
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select COUNT(*) from `8WS34TaNi5`.USER as T  where email = '" + email + "' and '" + password + "' = (select password from `8WS34TaNi5`.USER_AUTH as S where S.user_id = T.user_id )";
+            String query = "Select * from `8WS34TaNi5`.USER as T  where email = '" + email + "' and '" + password + "' = (select password from `8WS34TaNi5`.USER_AUTH as S where S.user_id = T.user_id )";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
-            rs.next();
-            if(rs.getInt("COUNT(*)") == 0) throw new InvalidUsernamePassowordException("Invalid USERNAME or PASSWORD");
+            rs.last();
+//            System.out.println("number of rows"+ rs.getRow());
+            if(rs.getRow() == 0) throw new InvalidUsernamePassowordException("Invalid USERNAME or PASSWORD");
+            User user = new User(rs.getInt("user_id"),rs.getString("name"),rs.getString("country"),rs.getString("email"),rs.getString("DOB"),rs.getString("gender"));
+
             connection.close();
             System.out.println("Login");
+            return user;
         }
         catch (SQLException e) {
             e.printStackTrace();
         }
+        return null;
     }
 
     public void checkUser(String name, String email) throws  MyException{

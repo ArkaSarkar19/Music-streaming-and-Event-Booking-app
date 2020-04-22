@@ -1,4 +1,6 @@
 package Ui.SignupLoginMain;
+import Core.SaveFileCache;
+import Core.User;
 import Exception.*;
 import Database.DataController;
 import Ui.MainPage.MainScreenController;
@@ -10,12 +12,14 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 //import javax.swing.plaf.basic.BasicTabbedPaneUI;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.ObjectInputStream;
 
 public class LoginBox {
     public static Stage loginwindow;
     public static Stage signupwindow;
-
 
 
     public static void getLogin() throws IOException {
@@ -29,10 +33,33 @@ public class LoginBox {
             PasswordField password = (PasswordField)scene1.lookup("#loginpassword");
             try{
                 DataController cont = new DataController();
-                cont.validateLogin(email.getText(),password.getText());
+                User user;
+                SaveFileCache save = null;
+                try {
+                    save = deserialize();
+                } catch (ClassNotFoundException e) {
+                    System.out.println("Could not Deserialize1");
+                    e.printStackTrace();
+                } catch (FileNotFoundException e) {
+                    System.out.println("Could not Deserialize2");
+
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    System.out.println("Could not Deserialize3");
+
+                    e.printStackTrace();
+                }
+                if(save == null || !save.getStatus()) user = cont.validateLogin(email.getText(),password.getText());
+                else{
+
+                    user = cont.validateLogin(save.getUserEmail(),save.getUserPassword());
+                }
+//                user = cont.validateLogin(email.getText(),password.getText());
+
                 System.out.println("SuccessFull");
                 loginwindow.close();
-                MainScreenController.loadWindow(email.getText(),password.getText());
+                MainScreenController msc = new MainScreenController();
+                msc.loadWindow(user,password.getText());
 
             } catch (MyException e) {
                 System.out.println("Error occured during login");
@@ -45,6 +72,7 @@ public class LoginBox {
         loginwindow.setResizable(false);
         loginwindow.showAndWait();
     }
+
     public static void getSignup() throws IOException {
         signupwindow = new Stage();
         signupwindow.initModality(Modality.APPLICATION_MODAL);
@@ -62,5 +90,17 @@ public class LoginBox {
         signupwindow.setTitle("Register");
         signupwindow.setResizable(false);
         signupwindow.show();
+    }
+
+    public static SaveFileCache deserialize() throws IOException,ClassNotFoundException, FileNotFoundException {
+        ObjectInputStream in = null;
+        try {
+            in = new ObjectInputStream(new FileInputStream("Cache/Credentials.txt"));
+            SaveFileCache p = (SaveFileCache) in.readObject();
+            return p;
+        }
+        finally {
+            if(in!=null)in.close();
+        }
     }
 }

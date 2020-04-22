@@ -1,7 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="" />
+    <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Cache/Credentials.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Core/User.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Core/User.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Database/DataController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Database/DataController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/META-INF/Application-FX.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Ui/MainPage/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Ui/MainPage/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Ui/MainPage/MainScreenController.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Ui/MainPage/MainScreenController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Application-FX/Ui/SignupLoginMain/LoginBox.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Application-FX/Ui/SignupLoginMain/LoginBox.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Core/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Core/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Database/DataController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Database/DataController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/MainPage/MainScreen.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/MainPage/MainScreen.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/MainPage/MainScreenController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/MainPage/MainScreenController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginBox.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginBox.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,9 +62,6 @@
     <ui_properties converted="true" />
     <breakpoint_rules converted="true" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="JavaFxApplication" />
-  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -76,7 +87,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
@@ -98,7 +108,7 @@
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
-    <property name="settings.editor.selected.configurable" value="preferences.JavaFX" />
+    <property name="settings.editor.selected.configurable" value="project.propGUI" />
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -238,12 +248,13 @@
       <workItem from="1587148673944" duration="1280000" />
       <workItem from="1587281706109" duration="6734000" />
       <workItem from="1587300336706" duration="7469000" />
-      <workItem from="1587378530987" duration="10927000" />
+      <workItem from="1587378530987" duration="18233000" />
+      <workItem from="1587553565500" duration="8028000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="OFFER_MOVE_TO_ANOTHER_CHANGELIST_ON_PARTIAL_COMMIT" value="true" />
@@ -262,6 +273,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="498" y="196" key="#com.intellij.ide.util.TreeClassChooserDialog/0.0.1536.824@0.0.1536.824" timestamp="1587302665432" />
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1587552812594">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="148" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1536.824@0.0.1536.824" timestamp="1587552812594" />
     <state x="611" y="309" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.packages" timestamp="1587302020373">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -274,22 +289,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587478627261" />
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom" timestamp="1587507749915">
+    <state width="1483" height="174" key="GridCell.Tab.0.bottom" timestamp="1587565699858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587507749915" />
-    <state width="1493" height="189" key="GridCell.Tab.0.center" timestamp="1587507749915">
+    <state width="1483" height="174" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1587565699858" />
+    <state width="1483" height="174" key="GridCell.Tab.0.center" timestamp="1587565699858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587507749915" />
-    <state width="1493" height="189" key="GridCell.Tab.0.left" timestamp="1587507749914">
+    <state width="1483" height="174" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1587565699858" />
+    <state width="1483" height="174" key="GridCell.Tab.0.left" timestamp="1587565699858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587507749914" />
-    <state width="1493" height="189" key="GridCell.Tab.0.right" timestamp="1587507749915">
+    <state width="1483" height="174" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1587565699858" />
+    <state width="1483" height="174" key="GridCell.Tab.0.right" timestamp="1587565699858">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1493" height="189" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587507749915" />
+    <state width="1483" height="174" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1587565699858" />
     <state width="1493" height="261" key="GridCell.Tab.1.bottom" timestamp="1586719658556">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -306,10 +321,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1493" height="261" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1586719658556" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1587478871389">
+    <state x="249" y="0" key="SettingsEditor" timestamp="1587554641066">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587478871389" />
+    <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587554641066" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587378532060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
