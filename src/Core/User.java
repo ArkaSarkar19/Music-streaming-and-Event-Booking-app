@@ -2,6 +2,7 @@ package Core;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.regex.Pattern;
 import Exception.*;
 import java.util.regex.Pattern;
@@ -41,7 +42,9 @@ public class User{
         System.out.println(user_id + " " + name + " " + country + " " + email + " " + DOB + " " + gender);
 
     }
-
+    public int getAge(){
+        return Calendar.DATE;
+    }
 
     public int getUser_id() {
         return user_id;

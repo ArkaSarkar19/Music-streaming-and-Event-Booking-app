@@ -32,10 +32,9 @@ public class MainScreenController implements Serializable {
     public Button yourPlaylistsButton;
     private User user;
     private SaveFileCache data;
-
     public  void loadWindow(User user, String password){
+        this.user = user;
         try {
-            this.user = user;
             data = new SaveFileCache(user.getEmail(),password);
             mainPageWindow = new Stage();
             Main.window.close();
@@ -43,6 +42,14 @@ public class MainScreenController implements Serializable {
             mainPageWindow.initModality(Modality.APPLICATION_MODAL);
             scene = new Scene(mainPage);
             mainPageWindow.setScene(scene);
+            userProfileButton = (Button)scene.lookup("#userProfileButton");
+            userProfilePic = (ImageView)scene.lookup("#userProfilePic");
+            homeButton = (Button)scene.lookup("#homeButton");
+            searchButton = (Button)scene.lookup("#searchButton");
+            yourLibraryButton = (Button)scene.lookup("#yourLibraryButton");
+            addPlaylistButton = (Button)scene.lookup("#addPlaylistButton");
+            yourPlaylistsButton = (Button)scene.lookup("#yourPlaylistsButton");
+            setCredentials();
             mainPageWindow.setTitle("Profile");
             mainPageWindow.setResizable(false);
             mainPageWindow.show();
@@ -62,23 +69,22 @@ public class MainScreenController implements Serializable {
                     mainPageWindow.close();
                 }
             });
+            userProfileButton.setOnAction(actionEvent -> {
+                handleUserProfileButton();
+            });
         }
         catch (Exception e){
             System.out.println("Error while loading main page");
             e.printStackTrace();
         }
-        userProfileButton = (Button)scene.lookup("#userProfileButton");
-        userProfilePic = (ImageView)scene.lookup("#userProfilePic");
-        homeButton = (Button)scene.lookup("#homeButton");
-        searchButton = (Button)scene.lookup("#searchButton");
-        yourLibraryButton = (Button)scene.lookup("#yourLibraryButton");
-        addPlaylistButton = (Button)scene.lookup("#addPlaylistButton");
-        yourPlaylistsButton = (Button)scene.lookup("#yourPlaylistsButton");
-        setCredentials();
+
 
 
     }
     public void handleUserProfileButton()  {
+        ProfilePageController ProfilePageController = new ProfilePageController();
+        user.display();
+
         ProfilePageController.loadWindow(user);
     }
     private void setCredentials(){

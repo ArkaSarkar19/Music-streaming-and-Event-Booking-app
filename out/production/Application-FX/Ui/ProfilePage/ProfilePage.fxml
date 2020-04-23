@@ -12,12 +12,12 @@
          <image>
             <Image url="@../../Resources/homepage_user.png" />
          </image></ImageView>
-      <ImageView fitHeight="129.0" fitWidth="123.0" layoutX="579.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="profilePic" fitHeight="129.0" fitWidth="123.0" layoutX="579.0" layoutY="64.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../Resources/circle-cropped.png" />
          </image>
       </ImageView>
-      <Label layoutX="524.0" layoutY="210.0" text="Harman, 20" textFill="#fcfafa">
+      <Label id="profileUserAge" fx:id="profileUserAge" layoutX="524.0" layoutY="210.0" textFill="#fcfafa">
          <font>
             <Font size="46.0" />
          </font>

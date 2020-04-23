@@ -56,28 +56,8 @@ public class LoginBox {
             try{
                 DataController cont = new DataController();
                 User user;
-                SaveFileCache save2 = null;
-                try {
-                    save2 = deserialize();
-                } catch (ClassNotFoundException e) {
-                    System.out.println("Could not Deserialize1");
-                    e.printStackTrace();
-                } catch (FileNotFoundException e) {
-                    System.out.println("Could not Deserialize2");
-
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    System.out.println("Could not Deserialize3");
-
-                    e.printStackTrace();
-                }
-                if(save2 == null || !save2.getStatus()) user = cont.validateLogin(email.getText(),password.getText());
-                else{
-
-                    user = cont.validateLogin(save2.getUserEmail(),save2.getUserPassword());
-                }
-//                user = cont.validateLogin(email.getText(),password.getText());
-
+                user = cont.validateLogin(email.getText(),password.getText());
+                user.display();
                 System.out.println("SuccessFull");
                 loginwindow.close();
                 MainScreenController msc = new MainScreenController();
