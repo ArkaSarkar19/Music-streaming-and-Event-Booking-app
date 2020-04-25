@@ -2,6 +2,7 @@ package Ui.MainPage;
 
 import Core.SaveFileCache;
 import Core.User;
+import Ui.AddPlaylist.AddPlaylistController;
 import Ui.ProfilePage.ProfilePageController;
 import Ui.SignupLoginMain.LoginBox;
 import Ui.SignupLoginMain.Main;
@@ -30,7 +31,7 @@ public class MainScreenController implements Serializable {
     public Button yourLibraryButton;
     public Button addPlaylistButton;
     public Button yourPlaylistsButton;
-    private User user;
+    private static User user;
     private SaveFileCache data;
     public  void loadWindow(User user, String password){
         this.user = user;
@@ -89,5 +90,19 @@ public class MainScreenController implements Serializable {
     }
     private void setCredentials(){
         userProfileButton.setText(user.getName());
+    }
+
+    public void handleAddpPlaylistButton(){
+        AddPlaylistController p =  new AddPlaylistController();
+        try {
+            p.loadWindow();
+        } catch (IOException e) {
+            System.out.println("Error loading add playlist window");
+            e.printStackTrace();
+        }
+    }
+
+    public static User getUser() {
+        return user;
     }
 }

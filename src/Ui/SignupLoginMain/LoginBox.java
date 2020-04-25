@@ -68,7 +68,14 @@ public class LoginBox {
                 e.printStackTrace();
             }
         });
-
+        Hyperlink signup = (Hyperlink)scene1.lookup("#mainLoginSignup");
+        signup.setOnAction(actionEvent -> {
+            try {
+                getSignup();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
         loginwindow.setScene(scene1);
         loginwindow.setTitle("Login");
         loginwindow.setResizable(false);

@@ -110,4 +110,22 @@ public class DataController {
         System.out.println("Successfull");
         connection.close();
     }
+
+    public void addNewPlaylist(UserPlaylist userPlaylist) throws CannotAddPlaylsitException, ConnectionInvalidException {
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "insert into `8WS34TaNi5`.USER_PLAYLISTS values(" + userPlaylist.getPlaylist_id() + "," + userPlaylist.getUser_id()  + " ,'" + userPlaylist.getName().toString() + "'," + userPlaylist.getSong_num() + ")";
+            System.out.println(query);
+            stmt.executeUpdate(query);
+            System.out.println("Successfull");
+            connection.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            throw  new CannotAddPlaylsitException("Cannot add playlist");
+        }
+    }
 }

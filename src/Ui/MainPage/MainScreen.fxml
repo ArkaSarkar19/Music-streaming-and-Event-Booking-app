@@ -28,7 +28,7 @@
       </Label>
       <VBox layoutX="25.0" layoutY="378.0" prefHeight="99.0" prefWidth="150.0" spacing="15.0">
          <children>
-            <Button id="addPlaylistButton" fx:id="addPlaylistButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" stylesheets="@mainPageStyle.css" text="Add Playlist" />
+            <Button id="addPlaylistButton" fx:id="addPlaylistButton" mnemonicParsing="false" onAction="#handleAddpPlaylistButton" prefHeight="39.0" prefWidth="151.0" stylesheets="@mainPageStyle.css" text="Add Playlist" />
             <Button id="yourPlaylistsButton" fx:id="yourPlaylistsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Playlists" />
          </children>
       </VBox>
