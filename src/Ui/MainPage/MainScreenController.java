@@ -6,6 +6,7 @@ import Ui.AddPlaylist.AddPlaylistController;
 import Ui.ProfilePage.ProfilePageController;
 import Ui.SignupLoginMain.LoginBox;
 import Ui.SignupLoginMain.Main;
+import Ui.YourLibrary.YourLibraryController;
 import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -104,5 +105,13 @@ public class MainScreenController implements Serializable {
 
     public static User getUser() {
         return user;
+    }
+    public void handleYourLibraryButton(){
+        try{
+            YourLibraryController p = new YourLibraryController();
+            p.loadwindow();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

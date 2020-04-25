@@ -169,7 +169,7 @@
          <children>
             <Button fx:id="homeButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" stylesheets="@mainPageStyle.css" text="Home" />
             <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="164.0" text="Search" />
-            <Button id="yourPlaylistsButton" fx:id="yourLibraryButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Library" />
+            <Button id="yourPlaylistsButton" fx:id="yourLibraryButton" mnemonicParsing="false" onAction="#handleYourLibraryButton" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Library" />
          </children>
       </VBox>
    </children>
