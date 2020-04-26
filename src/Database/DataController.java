@@ -59,7 +59,7 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select * from `8WS34TaNi5`.USER as T  where email = '" + email + "' and '" + password + "' = (select password from `8WS34TaNi5`.USER_AUTH as S where S.user_id = T.user_id )";
+            String query = "Select * from USER as T  where email = '" + email + "' and '" + password + "' = (select password from USER_AUTH as S where S.user_id = T.user_id )";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.last();
@@ -83,7 +83,7 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select COUNT(*) from `8WS34TaNi5`.USER where binary email = '" + email +"'";
+            String query = "Select COUNT(*) from USER where binary email = '" + email +"'";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
@@ -101,10 +101,10 @@ public class DataController {
         connection = con.getConnection();
         if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
         Statement stmt = connection.createStatement();
-        String query = "insert into `8WS34TaNi5`.USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "')";
+        String query = "insert into USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "')";
         System.out.println(query);
         stmt.executeUpdate(query);
-        query = "insert into `8WS34TaNi5`.USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
+        query = "insert into USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
         System.out.println(query);
         stmt.executeUpdate(query);
         System.out.println("Successfull");
@@ -117,7 +117,7 @@ public class DataController {
             connection = con.getConnection();
             if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "insert into `8WS34TaNi5`.USER_PLAYLISTS values(" + userPlaylist.getPlaylist_id() + "," + userPlaylist.getUser_id()  + " ,'" + userPlaylist.getName().toString() + "'," + userPlaylist.getSong_num() + ")";
+            String query = "insert into USER_PLAYLISTS values(" + userPlaylist.getPlaylist_id() + "," + userPlaylist.getUser_id()  + " ,'" + userPlaylist.getName().toString() + "'," + userPlaylist.getSong_num() + ")";
             System.out.println(query);
             stmt.executeUpdate(query);
             System.out.println("Successfull");

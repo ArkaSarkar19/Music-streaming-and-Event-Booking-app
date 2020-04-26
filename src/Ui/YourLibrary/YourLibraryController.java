@@ -33,6 +33,10 @@ public class YourLibraryController {
 
     }
 
+    public void handlePlaylistsButton(){
+
+    }
+
 
 
 }

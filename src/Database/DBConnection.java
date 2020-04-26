@@ -1,9 +1,9 @@
 package Database;
 import java.sql.*;
 public class DBConnection {
-    private String host = "jdbc:mysql://www.remotemysql.com";
-    private String user = "8WS34TaNi5";
-    private String passowrd = "fKJYiyhXGc";
+    private String host = "jdbc:mysql://bajao.crgxyeyepevg.us-east-1.rds.amazonaws.com/BAJAO";
+    private String user = "admin";
+    private String passowrd = "admin123";
 
     public Connection getConnection(){
         Connection connection = null;
