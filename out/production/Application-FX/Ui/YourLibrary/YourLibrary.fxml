@@ -36,7 +36,7 @@
       </ImageView>
       <HBox layoutX="269.0" layoutY="88.0" prefHeight="60.0" prefWidth="738.0" spacing="100.0">
          <children>
-            <Button fx:id="playlistsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" stylesheets="@../MainPage/mainPageStyle.css" text="Playlists" />
+            <Button fx:id="playlistsButton" mnemonicParsing="false" onAction="#handlePlaylistsButton" prefHeight="39.0" prefWidth="151.0" stylesheets="@../MainPage/mainPageStyle.css" text="Playlists" />
             <Button fx:id="artistsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" stylesheets="@../MainPage/mainPageStyle.css" text="Artists" />
             <Button fx:id="albumsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" stylesheets="@../MainPage/mainPageStyle.css" text="Albums" />
          </children>
@@ -50,5 +50,6 @@
             <Image url="@../../Resources/user.png" />
          </image>
       </ImageView>
+      <AnchorPane fx:id="activityWindow" layoutX="228.0" layoutY="164.0" prefHeight="517.0" prefWidth="1010.0" stylesheets="@ActivityWindow.css" />
    </children>
 </AnchorPane>

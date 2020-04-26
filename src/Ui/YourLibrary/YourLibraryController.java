@@ -1,19 +1,29 @@
 package Ui.YourLibrary;
 
+import Core.UserPlaylist;
+import Database.DataController;
+import Ui.MainPage.MainScreenController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import Exception.*;
 
+import javax.swing.text.html.ImageView;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class YourLibraryController {
     public Stage yourPlaylistsWindow;
     public Button playlistsButton;
     public Button artistsButton;
     public Button albumsButton;
+    public AnchorPane activityWindow;
     public Button goHomeButton;
     public Scene scene;
 
@@ -34,7 +44,31 @@ public class YourLibraryController {
     }
 
     public void handlePlaylistsButton(){
+        DataController db = new DataController();
 
+        try {
+            ArrayList<UserPlaylist> list  = db.getAllPlaylists(MainScreenController.getUser());
+            HBox hbox = new HBox(25);
+            ArrayList<Button> buttonlist = new ArrayList<Button>();
+            for(int i=0;i<list.size();i++){
+                list.get(i).display();
+                Button b = new Button(list.get(i).getName());
+                b.setId("playlistButton"+ i);
+                buttonlist.add(b);
+            }
+//            ScrollPane scrollPane = new ScrollPane(hbox);
+//            scrollPane.setId("Scrollpane");
+//            scrollPane.setFitToHeight(true);
+            hbox.getChildren().addAll(buttonlist);
+
+            activityWindow.getChildren().add(hbox);
+
+        } catch (ConnectionInvalidException e) {
+            e.printStackTrace();
+        } catch (CannotAddPlaylsitException e) {
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
     }
 
 

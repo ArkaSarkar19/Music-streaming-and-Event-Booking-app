@@ -6,11 +6,11 @@ public class UserPlaylist {
     private String name;
     private int song_num;
 
-    public UserPlaylist(int user_id, int playlist_id, String name){
+    public UserPlaylist(int user_id, int playlist_id, String name, int song_num){
         this.user_id = user_id;
         this.playlist_id = playlist_id;
         this.name = name;
-        this.song_num = 0;
+        this.song_num = song_num;
     }
 
     public int getPlaylist_id() {
@@ -27,6 +27,9 @@ public class UserPlaylist {
 
     public String getName() {
         return name;
+    }
+    public void display(){
+        System.out.println(playlist_id + " " + user_id + " " + name + " " + song_num);
     }
 
 }

@@ -128,4 +128,33 @@ public class DataController {
             throw  new CannotAddPlaylsitException("Cannot add playlist");
         }
     }
+
+    public ArrayList<UserPlaylist> getAllPlaylists(User user) throws ConnectionInvalidException, CannotAddPlaylsitException {
+        if(user == null) return  null;
+        try {
+            ArrayList<UserPlaylist> list = new ArrayList<>();
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "SELECT * FROM USER_PLAYLISTS where user_id = " + user.getUser_id();
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                int playlist_id = rs.getInt("playlist_id");
+                int user_id  = rs.getInt("user_id");
+                String name = rs.getString("name");
+                int song_num  = rs.getInt("song_num");
+                UserPlaylist up = new UserPlaylist(user_id, playlist_id,name,song_num);
+                list.add(up);
+            }
+            System.out.println("Successfull");
+            connection.close();
+            return list;
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            throw  new CannotAddPlaylsitException("Error getting all the playlists ");
+        }
+    }
 }

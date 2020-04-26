@@ -23,7 +23,7 @@ public class AddPlaylistController {
     public Button createButton;
     public TextField playlistName;
     public Button cancelButton;
-    public Stage addPlaylistwindow;
+    public static Stage addPlaylistwindow;
     public Scene scene;
 
     public void loadWindow() throws IOException {
@@ -40,15 +40,18 @@ public class AddPlaylistController {
         cancelButton.setOnAction(actionEvent -> {
             addPlaylistwindow.close();
         });
+        createButton = (Button)scene.lookup("#createButton");
+
     }
 
     public void handleCreateButton()  {
         try {
             int r = (int) ((Math.random() * 9000000) + 1000000);
             if(playlistName.getText().toString().equals("")) throw  new CannotAddPlaylsitException("Enter a playlist name !!!!");
-            UserPlaylist userPlaylist = new UserPlaylist(MainScreenController.getUser().getUser_id(), r, playlistName.getText().toString());
+            UserPlaylist userPlaylist = new UserPlaylist(MainScreenController.getUser().getUser_id(), r, playlistName.getText().toString(),0);
             DataController db = new DataController();
             db.addNewPlaylist(userPlaylist);
+            addPlaylistwindow.close();
         }
         catch (CannotAddPlaylsitException e ){
             System.out.println(e.getMessage());
