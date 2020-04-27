@@ -4,6 +4,7 @@ import Core.UserAuth;
 import Database.DBConnection;
 import Database.DataController;
 import Exception.*;
+import Ui.BackendUsers.MasterController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -49,12 +50,23 @@ public class LoginSignupController {
     public Text a6;
     public Text a7;
     public Text a8;
-
+    public Button adminButton;
     public  void handlelogin(){
         try{
             LoginBox.getLogin();
         }
         catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void handleAdminButton(){
+        try{
+            MasterController mc = new MasterController();
+            mc.loadSelectWindow();
+            Main.window.close();
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
     }
