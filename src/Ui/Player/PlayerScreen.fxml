@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.Player.PlayerController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e0f1a" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+      <Rectangle fx:id="lower_bar" arcHeight="5.0" arcWidth="5.0" fill="#acacac" height="7.5" layoutX="262.0" layoutY="672.0" stroke="BLACK" strokeType="INSIDE" width="750.0" />
+      <Rectangle fx:id="upper_bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="7.5" layoutX="262.0" layoutY="672.0" stroke="BLACK" strokeType="INSIDE" width="750.0" />
+      <ImageView fx:id="play" fitHeight="68.0" fitWidth="39.0" layoutX="617.0" layoutY="585.0" onMouseClicked="#play_pause_button" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/Icons/Player Icons/play.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="next" fitHeight="68.0" fitWidth="39.0" layoutX="697.0" layoutY="585.0" onMouseClicked="#next_button" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/Icons/Player Icons/next.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="prev" fitHeight="68.0" fitWidth="39.0" layoutX="537.0" layoutY="585.0" onMouseClicked="#prev_button" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/Icons/Player Icons/prev.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="loop" fitHeight="68.0" fitWidth="39.0" layoutX="967.0" layoutY="585.0" onMouseClicked="#loop_button" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/Icons/Player Icons/loop1.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="curtime" fill="WHITE" layoutX="200.0" layoutY="684.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00" textAlignment="CENTER" wrappingWidth="61.33673095703125">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="time" fill="WHITE" layoutX="1012.0" layoutY="684.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00" textAlignment="CENTER" wrappingWidth="61.33673095703125">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Text>
+      <Text fx:id="songname" fill="WHITE" layoutX="459.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SONG NAME" textAlignment="CENTER" wrappingWidth="355.7366943359375">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="coverart" fitHeight="400.0" fitWidth="400.0" layoutX="437.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/Albums/album1.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="artistname" fill="WHITE" layoutX="459.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist names" textAlignment="CENTER" wrappingWidth="355.7366943359375">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <ImageView fx:id="like" fitHeight="68.0" fitWidth="39.0" layoutX="263.0" layoutY="585.0" onMouseClicked="#like_button" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Assets/Icons/Player Icons/like1.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="back" fill="WHITE" layoutX="27.0" layoutY="69.0" onMouseClicked="#exit" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="117.336669921875">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="3.0" arcWidth="3.0" fill="WHITE" height="5.0" layoutX="31.0" layoutY="59.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="22.0" />
+      <Rectangle arcHeight="3.0" arcWidth="3.0" fill="WHITE" height="5.0" layoutX="29.0" layoutY="61.0" rotate="45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="11.0" />
+      <Rectangle arcHeight="3.0" arcWidth="3.0" fill="WHITE" height="5.0" layoutX="29.0" layoutY="56.0" rotate="-45.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="11.0" />
+   </children>
+</Pane>
