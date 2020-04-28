@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@ProfilePage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.ProfilePage.ProfilePageController">
@@ -17,10 +19,30 @@
             <Image url="@../../Resources/circle-cropped.png" />
          </image>
       </ImageView>
-      <Label id="profileUserAge" fx:id="profileUserAge" layoutX="524.0" layoutY="210.0" textFill="#fcfafa">
-         <font>
-            <Font size="46.0" />
-         </font>
-      </Label>
+      <VBox layoutX="428.0" layoutY="209.0" prefHeight="455.0" prefWidth="424.0" spacing="10.0">
+         <children>
+            <Label fx:id="profileUserName" alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="424.0" textFill="#fcfcfc">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="profileUserCountry" alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="424.0" textFill="#fcfcfc">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Label fx:id="profileUserEmail" alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="424.0" textFill="#fcfcfc">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="profileUserPrefGenre" alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="424.0" textFill="#fcfcfc">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Button" />
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

@@ -1,6 +1,7 @@
 package Ui.ProfilePage;
 
 import Core.User;
+import Database.DataController;
 import Ui.SignupLoginMain.LoginBox;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,13 +18,21 @@ public class ProfilePageController {
     public static Stage profilePage;
 
     @FXML
-    public Label profileUserAge;
+    public Label profileUserName;
+
+    @FXML
+    public Label profileUserCountry;
+    @FXML
+    public Label profileUserEmail;
+    @FXML
+    public Label profileUserPrefGenre;
+
     @FXML
     public ImageView profilePic;
 
     public static Scene scene;
     private User user;
-    public  void loadWindow(User user){
+    public  void loadWindow(User user) {
         try {
             this.user = user;
             profilePage = new Stage();
@@ -42,10 +51,19 @@ public class ProfilePageController {
         }
 
 //        user.display();
-        profileUserAge = (Label)scene.lookup("#profileUserAge");
+        profileUserName = (Label)scene.lookup("#profileUserName");
         System.out.println(user.getName());
         System.out.println(user.getAge());
-        profileUserAge.setText(user.getName());
+        String a  = Integer.toString(user.getAge());
+        profileUserName.setText(user.getName() + " , " + a);
+
+        profileUserCountry = (Label)scene.lookup("#profileUserCountry");
+        profileUserCountry.setText("Country : " + user.getCountry());
+
+        profileUserEmail = (Label)scene.lookup("#profileUserEmail");
+        profileUserEmail.setText("Email : " + user.getEmail());
+
+
 
 
     }

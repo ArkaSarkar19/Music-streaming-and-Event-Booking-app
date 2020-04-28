@@ -88,7 +88,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="dynamic.classpath" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/BAJAO_fin/BAJAO" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../mysql-connector-java-8.0.19.jar!/" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Libraries" />
@@ -96,6 +96,12 @@
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="recentsLimit" value="5" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\harma\Downloads\BAJAO-master\BAJAO-master\src\Ui" />
+      <recent name="C:\Users\harma\Downloads\BAJAO-master\BAJAO-master\src\Ui\Search" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration default="true" type="Applet" factoryName="Applet">
@@ -237,7 +243,7 @@
       <workItem from="1587300336706" duration="7469000" />
       <workItem from="1587378530987" duration="18233000" />
       <workItem from="1587553565500" duration="19575000" />
-      <workItem from="1587735455762" duration="72877000" />
+      <workItem from="1587735455762" duration="71082000" />
     </task>
     <servers />
   </component>
@@ -273,26 +279,31 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1586289654350" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1587478627261">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="686" y="211" key="FileChooserDialogImpl" timestamp="1588102929357">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587478627261" />
-    <state width="1483" height="83" key="GridCell.Tab.0.bottom" timestamp="1588103367073">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="686" y="211" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1588102929357" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1588103821150">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1483" height="83" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588103367073" />
-    <state width="1483" height="83" key="GridCell.Tab.0.center" timestamp="1588103367073">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1483" height="150" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588097386798" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1588103821150" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1588103821150">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1483" height="83" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588103367073" />
-    <state width="1483" height="83" key="GridCell.Tab.0.left" timestamp="1588103367072">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1483" height="150" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588097386798" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1588103821150" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1588103821149">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1483" height="83" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588103367072" />
-    <state width="1483" height="83" key="GridCell.Tab.0.right" timestamp="1588103367073">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state width="1483" height="150" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588097386797" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1588103821149" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1588103821150">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1483" height="83" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588103367073" />
+    <state width="1483" height="150" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588097386798" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1588103821150" />
     <state width="1483" height="255" key="GridCell.Tab.1.bottom" timestamp="1587725192284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -309,10 +320,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1483" height="255" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1587725192284" />
-    <state x="249" y="0" key="SettingsEditor" timestamp="1587916443183">
-      <screen x="0" y="0" width="1536" height="824" />
+    <state x="311" y="0" key="SettingsEditor" timestamp="1588102932700">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="249" y="0" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1587916443183" />
+    <state x="311" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1588102932700" />
     <state x="465" y="236" key="com.intellij.ide.util.TipDialog" timestamp="1587378532060">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
