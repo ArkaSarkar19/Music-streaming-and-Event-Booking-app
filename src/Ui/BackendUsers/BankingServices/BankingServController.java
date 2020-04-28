@@ -16,10 +16,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.Random;
 import Exception.*;
 
@@ -37,7 +34,7 @@ public class BankingServController {
         scene = new Scene(page);
         bankingServWindow.setScene(scene);
 
-        bankingServWindow.setTitle("New Playlist");
+        bankingServWindow.setTitle("Banking Servives");
         bankingServWindow.setResizable(false);
         bankingServWindow.show();
     }
@@ -270,6 +267,9 @@ public class BankingServController {
                         System.out.println(query);
                         ResultSet rs = stmt.executeQuery(query);
                         int k = 0;
+                        ResultSetMetaData rsmd = rs.getMetaData();
+                        String s1 = rsmd.getColumnName(1) + " | " + rsmd.getColumnName(2) + " | " + rsmd.getColumnName(3) + " | " + rsmd.getColumnName(4) + " | " + rsmd.getColumnName(5) + " | " + rsmd.getColumnName(6) + "\n" ;
+                        respone.appendText(s1);
                         while (rs.next()) {
                             ++k;
                             String s = rs.getInt(1) + " " + rs.getString(2) + " " + rs.getString(3) + " " + rs.getString(4) + " " + rs.getString(5) + " " + rs.getString(6) + "\n";

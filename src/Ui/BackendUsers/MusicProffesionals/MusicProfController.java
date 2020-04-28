@@ -36,7 +36,7 @@ public class MusicProfController {
         scene = new Scene(page);
         musicProfWindow.setScene(scene);
 
-        musicProfWindow.setTitle("New Playlist");
+        musicProfWindow.setTitle("Musical Proffesional");
         musicProfWindow.setResizable(false);
         musicProfWindow.show();
     }
