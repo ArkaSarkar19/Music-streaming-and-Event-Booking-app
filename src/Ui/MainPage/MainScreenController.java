@@ -4,6 +4,7 @@ import Core.SaveFileCache;
 import Core.User;
 import Ui.AddPlaylist.AddPlaylistController;
 import Ui.ProfilePage.ProfilePageController;
+import Ui.Search.SearchPageController;
 import Ui.SignupLoginMain.LoginBox;
 import Ui.SignupLoginMain.Main;
 import Ui.YourLibrary.YourLibraryController;
@@ -89,6 +90,14 @@ public class MainScreenController implements Serializable {
 
         ProfilePageController.loadWindow(user);
     }
+
+    public void handleSearchButton()  {
+        SearchPageController searchController = new SearchPageController();
+        searchController.loadWindow();
+//        user.display();
+//        searchController.loadWindow();
+    }
+
     private void setCredentials(){
         userProfileButton.setText(user.getName());
     }

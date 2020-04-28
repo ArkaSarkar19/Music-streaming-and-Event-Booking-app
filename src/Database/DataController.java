@@ -1,6 +1,8 @@
 package Database;
 import Core.*;
 import Exception.*;
+import Ui.Search.M;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -8,6 +10,36 @@ import java.util.List;
 import java.util.Map;
 public class DataController {
     public Connection connection;
+
+    public ArrayList<M> getSingleColumnFromTable(String tableName, String columnName) throws MyException{
+
+        ArrayList<M> data = null;
+
+
+        try {
+            data = new ArrayList<M>();
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            List<String> allTables = getAllTables();
+            if(!allTables.contains(tableName.toUpperCase())) throw new InvalidTableNameException(tableName + "is not a table in database");
+            String query = "Select " + columnName +  " from " + tableName.toUpperCase();
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()) {
+                M m = new M();
+                m.key=tableName;
+                m.value=rs.getString(1);
+                data.add(m);
+            }
+
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+        return data;
+    }
 
     public List<Map<String,String>> getData(String tableName) throws MyException{
         List<Map<String,String>> data  = null;

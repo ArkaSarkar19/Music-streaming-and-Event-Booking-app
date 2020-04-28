@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
-
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Ui.Search.SearchPage"
-            prefHeight="400.0" prefWidth="600.0">
-
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@SearchPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.Search.SearchPageController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1442.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/bg.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="100.0" fitWidth="176.0" layoutX="39.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="50.0">
+         <image>
+            <Image url="@../../Resources/logo.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="goHomeButton" layoutX="46.0" layoutY="176.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="176.0" text="Go Home" AnchorPane.leftAnchor="35.0" AnchorPane.topAnchor="176.0" />
+      <ImageView fitHeight="607.0" fitWidth="1013.0" layoutX="239.0" layoutY="87.0" opacity="0.11" pickOnBounds="true" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="239.0" AnchorPane.rightAnchor="28.0" AnchorPane.topAnchor="87.0">
+         <image>
+            <Image url="@../../Resources/grey-bg.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="246.0" layoutY="30.0" prefHeight="57.0" prefWidth="150.0" text="Browse" textFill="#f5f5f5">
+         <font>
+            <Font size="38.0" />
+         </font>
+      </Label>
+      <Button fx:id="searchButton" layoutX="527.0" layoutY="113.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="92.0" text="Search" />
+      <Button layoutX="640.0" layoutY="113.0" mnemonicParsing="false" onAction="#handlesFilterButton" prefHeight="39.0" prefWidth="92.0" text="Filter" />
+      <TextField fx:id="queryText" layoutX="297.0" layoutY="120.0" />
+      <VBox fx:id="vbox" layoutX="282.0" layoutY="183.0" prefHeight="471.0" prefWidth="936.0" />
+   </children>
 </AnchorPane>

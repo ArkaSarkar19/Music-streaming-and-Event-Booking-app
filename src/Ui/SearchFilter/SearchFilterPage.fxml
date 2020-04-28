@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<AnchorPane prefHeight="600.0" prefWidth="400.0" stylesheets="@SearchFilter.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.SearchFilter.SearchFilterController">
+   <children>
+      <ImageView fitHeight="600.0" fitWidth="400.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../Resources/black_bg.jpg" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="100.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/logo.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="155.0" layoutY="271.0" prefHeight="291.0" prefWidth="91.0" spacing="20.0">
+         <children>
+            <Button fx:id="songsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="91.0" text="Songs" />
+            <Button fx:id="genresButton" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="89.0" text="Genres" />
+            <Button fx:id="artistsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="91.0" text="Artists" />
+            <Button fx:id="playlistsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="89.0" text="Playlists" />
+         </children>
+      </VBox>
+      <Label layoutX="142.0" layoutY="193.0" text="Filter by" textFill="#f2f2f2">
+         <font>
+            <Font size="33.0" />
+         </font>
+      </Label>
+      <Button fx:id="cancelButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="x" />
+   </children>
+</AnchorPane>

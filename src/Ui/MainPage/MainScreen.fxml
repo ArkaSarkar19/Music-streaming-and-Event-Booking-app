@@ -168,7 +168,7 @@
       <VBox layoutX="26.0" layoutY="155.0" prefHeight="99.0" prefWidth="150.0" spacing="15.0">
          <children>
             <Button fx:id="homeButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="151.0" stylesheets="@mainPageStyle.css" text="Home" />
-            <Button fx:id="searchButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="164.0" text="Search" />
+            <Button fx:id="searchButton" mnemonicParsing="false" onAction="#handleSearchButton" prefHeight="39.0" prefWidth="164.0" text="Search" />
             <Button id="yourPlaylistsButton" fx:id="yourLibraryButton" mnemonicParsing="false" onAction="#handleYourLibraryButton" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Library" />
          </children>
       </VBox>
