@@ -1,0 +1,67 @@
+@font-face {
+    /*src: url("Resources/SERIO___.TTF");*/
+}
+
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : #B2B2B2;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+
+.loginbutton:hover{
+    -fx-background-color: linear-gradient(#818581, #a5ada5);
+}
+.loginbutton:pressed{
+    -fx-background-color: #a5ada5;
+}
+
+.mainlogin{
+    -fx-background-color: #0949b8;
+    -fx-shape: "M 650 150 L 150 150 C 150 150 100 150 100 200 L 100 300 C 75 300 100 300 100 300 C 100 300 100 350 150 350 L 650 350 C 700 350 700 300 700 300 L 700 200 C 700 150 650 150 650 150 ";
+    -fx-font-family: 'SeriesOrbit';
+    -fx-text-fill: white;
+    -fx-font-size: 18;
+
+}
+.mainlogin:hover{
+    -fx-background-color: linear-gradient(#3acde0, #207be3);
+
+}
+.mainlogin:pressed{
+    -fx-background-color: linear-gradient(#427feb,#0949b8);
+}
+
+.signupbutton{
+    -fx-shape: "M 600 250 C 650 250 650 350 600 350 L 300 350 C 250 350 250 250 300 250 L 600 250  ";
+    -fx-background-color: #1ed909;
+    -fx-font-family: 'SeriesOrbit';
+    -fx-font-size: 20;
+    -fx-text-fill: white;
+}
+.signupbutton:hover{
+    -fx-background-color: linear-gradient(#17b005, #30f518);
+
+}
+.signupbutton:pressed{
+    -fx-background-color: #1aa808;
+}
+
+.button{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: Transparent;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+.button:hover{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: #454745;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}

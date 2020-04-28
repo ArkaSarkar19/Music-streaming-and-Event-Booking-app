@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="360.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.BackendUsers.MasterController">
+   <children>
+      <ImageView fitHeight="360.0" fitWidth="640.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/bg.jpg" />
+         </image>
+         <effect>
+            <GaussianBlur />
+         </effect>
+      </ImageView>
+      <VBox alignment="TOP_CENTER" layoutX="196.0" layoutY="24.0" prefHeight="257.0" prefWidth="205.0" spacing="15.0">
+         <children>
+            <Button fx:id="ticketingServicesButton" mnemonicParsing="false" onAction="#handleTicketingServButton" stylesheets="@SelectUser.css" text="Ticketing Services" />
+            <Button fx:id="advertisersButton" mnemonicParsing="false" onAction="#handleAdvertiserButton" stylesheets="@SelectUser.css" text="Advertisers" />
+            <Button fx:id="BankingServicesButton" mnemonicParsing="false" onAction="#handleBankingServButton" stylesheets="@SelectUser.css" text="Banking Services" />
+            <Button fx:id="eventOrganisersButton" mnemonicParsing="false" onAction="#handleEventOrgButton" stylesheets="@SelectUser.css" text="Event Organisers" />
+            <Button fx:id="musicProfessionalsButton" mnemonicParsing="false" onAction="#handleMusicProfButton" stylesheets="@SelectUser.css" text="Music Proffesionals" />
+            <Button fx:id="adminButton" mnemonicParsing="false" onAction="#handleAdminButton" stylesheets="@SelectUser.css" text="Admin" />
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+* {
+    -fx-primary : #2A2E37;
+    -fx-secondary : #FFFF8D;
+    -fx-primarytext : #B2B2B2;
+    -fx-blue: #1976D2;
+    -fx-red: #FF0000;
+    -fx-color-1:#1976D2;
+}
+.button{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: Transparent;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 12pt;
+    -fx-min-height: 50px;
+    -fx-min-width: 50px;
+}
+.button:hover{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: #18b304;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 10px;
+    -fx-background-radius: 10px;
+    -fx-font-size: 12pt;
+    -fx-min-height: 50px;
+    -fx-min-width: 50px;
+
+}
+.scrollpane{
+    -fx-background-color: Transparent;
+
+}
+

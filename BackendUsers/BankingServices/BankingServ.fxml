@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.BackendUsers.BankingServices.BankingServController">
+    <children>
+        <ImageView fitHeight="720.0" fitWidth="1280.0" layoutX="-10.0" layoutY="-13.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Resources/bg.jpg" />
+            </image>
+            <effect>
+                <GaussianBlur />
+            </effect>
+        </ImageView>
+        <VBox alignment="TOP_CENTER" layoutX="55.0" layoutY="166.0" prefHeight="372.0" prefWidth="197.0" spacing="15.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#handleCheckTransaction" stylesheets="@BankingServ.css" text="Check Transactions" />
+                <Button mnemonicParsing="false" onAction="#handleMakeTransaction" stylesheets="@BankingServ.css" text="Make Transaction" />
+                <Button mnemonicParsing="false" onAction="#handleRefundTransaction" stylesheets="@BankingServ.css" text="Refund Transaction" />
+            <Button mnemonicParsing="false" onAction="#handleBanksButton" stylesheets="@BankingServ.css" text="Banks" />
+            </children>
+        </VBox>
+        <Label layoutX="61.0" layoutY="76.0" prefHeight="51.0" prefWidth="206.0" text="Select Type of Query" textFill="#dfc4c4">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ImageView fitHeight="617.0" fitWidth="953.0" layoutX="286.0" layoutY="92.0" opacity="0.15" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../../Resources/grey-bg.png" />
+            </image>
+        </ImageView>
+        <AnchorPane fx:id="activityWindow" layoutX="327.0" layoutY="119.0" prefHeight="540.0" prefWidth="885.0" stylesheets="@BankingServ.css">
+            <opaqueInsets>
+                <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+            </opaqueInsets>
+            <padding>
+                <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+            </padding></AnchorPane>
+    </children>
+</AnchorPane>

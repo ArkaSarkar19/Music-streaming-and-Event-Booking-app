@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.SignupLoginMain.LoginSignupController">
+   <children>
+      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/homepage_signup.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="signupname" layoutX="524.0" layoutY="157.0" opacity="0.55" prefHeight="34.0" prefWidth="224.0" promptText="Name">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="signupusername" layoutX="524.0" layoutY="207.0" opacity="0.55" prefHeight="34.0" prefWidth="224.0" promptText="What should we call you?">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signupemail" layoutX="524.0" layoutY="256.0" opacity="0.55" prefHeight="34.0" prefWidth="224.0" promptText="Email">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <PasswordField fx:id="signuppassword" layoutX="523.0" layoutY="312.0" opacity="0.55" prefHeight="34.0" prefWidth="224.0" promptText="Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <PasswordField fx:id="signuppassword1" layoutX="523.0" layoutY="367.0" opacity="0.55" prefHeight="34.0" prefWidth="224.0" promptText="Confirm Password">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </PasswordField>
+      <MenuButton fx:id="signupmonth" layoutX="603.0" layoutY="456.0" mnemonicParsing="false" opacity="0.44" prefHeight="34.0" prefWidth="66.0" text="M" textAlignment="CENTER">
+        <items>
+          <MenuItem fx:id="action1" mnemonicParsing="false" onAction="#handlemonthsignup1" text="January" />
+          <MenuItem fx:id="action2" mnemonicParsing="false" onAction="#handlemonthsignup2" text="February" />
+            <MenuItem fx:id="action3" mnemonicParsing="false" onAction="#handlemonthsignup3" text="March" />
+            <MenuItem fx:id="action4" mnemonicParsing="false" onAction="#handlemonthsignup4" text="April" />
+            <MenuItem fx:id="action5" mnemonicParsing="false" onAction="#handlemonthsignup5" text="May" />
+            <MenuItem fx:id="action6" mnemonicParsing="false" onAction="#handlemonthsignup6" text="June" />
+            <MenuItem fx:id="action7" mnemonicParsing="false" onAction="#handlemonthsignup7" text="July" />
+            <MenuItem fx:id="action8" mnemonicParsing="false" onAction="#handlemonthsignup8" text="August" />
+            <MenuItem fx:id="action9" mnemonicParsing="false" onAction="#handlemonthsignup9" text="September" />
+            <MenuItem fx:id="action10" mnemonicParsing="false" onAction="#handlemonthsignup10" text="October" />
+            <MenuItem fx:id="action11" mnemonicParsing="false" onAction="#handlemonthsignup11" text="November" />
+            <MenuItem fx:id="action12" mnemonicParsing="false" onAction="#handlemonthsignup12" text="December" />
+        </items>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </MenuButton>
+      <Text fill="#fcfcfc" layoutX="524.0" layoutY="440.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Date of birth" wrappingWidth="152.38311195373535" />
+      <TextField fx:id="signupyear" layoutX="524.0" layoutY="456.0" prefHeight="34.0" prefWidth="66.0" promptText="Year">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <TextField fx:id="signupdate" layoutX="682.0" layoutY="456.0" prefHeight="34.0" prefWidth="66.0" promptText="Date">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <RadioButton fx:id="gendermale" layoutX="521.0" layoutY="513.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="60.0" text="Male" textFill="#e7e7e7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="genderfemale" layoutX="590.0" layoutY="513.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="72.0" text="Female" textFill="#e7e7e7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="genderother" layoutX="682.0" layoutY="512.0" mnemonicParsing="false" prefHeight="20.0" prefWidth="82.0" text="Other" textFill="#e7e7e7">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <TextField fx:id="signupcountry" layoutX="523.0" layoutY="549.0" opacity="0.55" prefHeight="34.0" prefWidth="224.0" promptText="Country">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </TextField>
+      <Button id="signupbutton" fx:id="signupbutton" layoutX="512.0" layoutY="606.0" mnemonicParsing="false" onAction="#handlemainsignup" prefHeight="42.0" prefWidth="247.0" styleClass="signupbutton" stylesheets="@Main.css" text="SIGN UP" />
+      <Text fx:id="a1" fill="#f80808" layoutX="800.0" layoutY="173.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a2" fill="#f80808" layoutX="800.0" layoutY="236.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a3" fill="#f80808" layoutX="800.0" layoutY="285.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a4" fill="#f80808" layoutX="800.0" layoutY="333.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a5" fill="#f80808" layoutX="800.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a6" fill="#f80808" layoutX="800.0" layoutY="477.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a7" fill="#f80808" layoutX="800.0" layoutY="527.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+      <Text fx:id="a8" fill="#f80808" layoutX="800.0" layoutY="570.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="104.00003662109384" />
+   </children>
+</AnchorPane>
