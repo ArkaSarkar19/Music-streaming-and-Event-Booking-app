@@ -1,5 +1,6 @@
 package Ui.BackendUsers;
 
+import Ui.BackendUsers.Advertiser.AdvertiserController;
 import Ui.BackendUsers.BankingServices.BankingServController;
 import Ui.BackendUsers.MusicProffesionals.MusicProfController;
 import Ui.BackendUsers.TicketingServ.TicketingServController;
@@ -61,6 +62,12 @@ public class MasterController {
 
     }
     public void handleAdvertiserButton(){
+        AdvertiserController ac = new AdvertiserController();
+        try {
+            ac.loadWindow();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
     public void handleAdminButton(){
