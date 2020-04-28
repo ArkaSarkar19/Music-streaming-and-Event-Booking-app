@@ -157,4 +157,9 @@ public class DataController {
             throw  new CannotAddPlaylsitException("Error getting all the playlists ");
         }
     }
+
+    public Connection getConnection(){
+        DBConnection db = new DBConnection();
+        return db.getConnection();
+    }
 }
