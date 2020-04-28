@@ -28,7 +28,6 @@
             <Button mnemonicParsing="false" stylesheets="@MusicProf.css" text="Check Likes/views" />
             <Button mnemonicParsing="false" stylesheets="@MusicProf.css" text="Check Booking" />
             <Button mnemonicParsing="false" stylesheets="@MusicProf.css" text="Compare Stats" />
-            <Button mnemonicParsing="false" stylesheets="@MusicProf.css" text="Compare Stats" />
          </children>
       </VBox>
       <Label layoutX="80.0" layoutY="56.0" prefHeight="51.0" prefWidth="206.0" text="Select Type of Query" textFill="#dfc4c4">

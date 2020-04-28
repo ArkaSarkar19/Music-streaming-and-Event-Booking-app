@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="cdb932d9-7e58-4d94-93a9-e7b232ef17da" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginSignupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/LoginSignupController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/Main.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/Main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ui/SignupLoginMain/Main.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/SignupLoginMain/Main.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/BackendUsers/MasterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/BackendUsers/MasterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Ui/BackendUsers/MusicProffesionals/MusicProfController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ui/BackendUsers/MusicProffesionals/MusicProfController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -241,7 +240,7 @@
       <workItem from="1587300336706" duration="7469000" />
       <workItem from="1587378530987" duration="18233000" />
       <workItem from="1587553565500" duration="19575000" />
-      <workItem from="1587735455762" duration="47075000" />
+      <workItem from="1587735455762" duration="54154000" />
     </task>
     <servers />
   </component>
@@ -281,22 +280,22 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587478627261" />
-    <state width="1483" height="152" key="GridCell.Tab.0.bottom" timestamp="1588024508475">
+    <state width="1483" height="136" key="GridCell.Tab.0.bottom" timestamp="1588062949516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="152" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588024508475" />
-    <state width="1483" height="152" key="GridCell.Tab.0.center" timestamp="1588024508475">
+    <state width="1483" height="136" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1588062949516" />
+    <state width="1483" height="136" key="GridCell.Tab.0.center" timestamp="1588062949516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="152" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588024508475" />
-    <state width="1483" height="152" key="GridCell.Tab.0.left" timestamp="1588024508474">
+    <state width="1483" height="136" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1588062949516" />
+    <state width="1483" height="136" key="GridCell.Tab.0.left" timestamp="1588062949516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="152" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588024508474" />
-    <state width="1483" height="152" key="GridCell.Tab.0.right" timestamp="1588024508475">
+    <state width="1483" height="136" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1588062949516" />
+    <state width="1483" height="136" key="GridCell.Tab.0.right" timestamp="1588062949516">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state width="1483" height="152" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588024508475" />
+    <state width="1483" height="136" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1588062949516" />
     <state width="1483" height="255" key="GridCell.Tab.1.bottom" timestamp="1587725192284">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

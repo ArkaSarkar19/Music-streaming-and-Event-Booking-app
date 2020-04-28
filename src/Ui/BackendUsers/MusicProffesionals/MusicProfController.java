@@ -41,6 +41,7 @@ public class MusicProfController {
         musicProfWindow.show();
     }
     public void handleAddsong(){
+        activityWindow.getChildren().clear();
         VBox vb = new VBox(15);
 
         TextField title = new TextField();
@@ -63,6 +64,11 @@ public class MusicProfController {
         album.setPromptText("Album");
         vb.getChildren().add(album);
 
+        TextField genre = new TextField();
+        genre.opacityProperty().setValue(.5);
+        genre.setPromptText("Genre");
+        vb.getChildren().add(genre);
+
         TextField duration = new TextField();
         duration.opacityProperty().setValue(.5);
         duration.setPromptText("Duration");
@@ -78,7 +84,7 @@ public class MusicProfController {
 
         TextArea respone = new TextArea();
         respone.opacityProperty().setValue(.6);
-        respone.setMinSize(100,250);
+        respone.setMinSize(100,200);
         vb.getChildren().add(respone);
         activityWindow.getChildren().add(vb);
 
@@ -111,7 +117,10 @@ public class MusicProfController {
                     }
                     Random rand = new Random();
                     int r = rand. nextInt(9000000) + 1000000;
-                    query = "insert into ALL_SONGS values(" + r +",'" + title.getText() + "','" + lang.getText() + "',"+ artist_id + ","+ album_id + "," + 0  + ",'" + duration.getText() + "'," + "'2020-04-30'" +")";
+                    query = "insert into ALL_SONGS values(" + r +",'" + title.getText() + "','" + lang.getText() + "',"+ artist_id + ","+ album_id + "," + 0  + ",'" + duration.getText() + "'," + "'2020-04-30'" +",'" + genre.getText() + "')";
+                    System.out.println(query);
+                    stmt.executeUpdate(query);
+                    query = "insert into SONG_GENRE values(" + r + ",'" + genre.getText() + "')";
                     System.out.println(query);
                     stmt.executeUpdate(query);
                     respone.setText("Successfully Added song ");
@@ -148,6 +157,10 @@ public class MusicProfController {
         label.setPromptText("Label");
         vb.getChildren().add(label);
 
+        TextField genre = new TextField();
+        genre.opacityProperty().setValue(.5);
+        genre.setPromptText("Genre");
+        vb.getChildren().add(genre);
 
         Button ok = new Button("OK");
         vb.getChildren().add(ok);
@@ -182,7 +195,10 @@ public class MusicProfController {
                     Random rand = new Random();
                     int r = rand. nextInt(9000000) + 1000000;
 
-                    query = "insert into ALBUMS values(" + r +",'" + title.getText() + "',"+ artist_id + ",'" + label.getText()+ "'," + "'2020-04-30'" +")";
+                    query = "insert into ALBUMS values(" + r +",'" + title.getText() + "',"+ artist_id + ",'" + label.getText()+ "'," + "'2020-04-30'" + ",'" + genre.getText() + "')";
+                    System.out.println(query);
+                    stmt.executeUpdate(query);
+                    query = "insert into ALBUM_GENRE values(" + r + ",'" + genre.getText() + "')";
                     System.out.println(query);
                     stmt.executeUpdate(query);
                     respone.setText("Successfully Added Album ");
@@ -238,7 +254,9 @@ public class MusicProfController {
 
                     Random rand = new Random();
                     int r = rand. nextInt(9000000) + 1000000;
-
+                    query = "delete from SONG_GENRE where song_id = " + song_id ;
+                    System.out.println(query);
+                    stmt.executeUpdate(query);
                     query = "delete from ALL_SONGS where song_id = " + song_id ;
                     System.out.println(query);
                     stmt.executeUpdate(query);

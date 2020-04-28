@@ -1,5 +1,6 @@
 package Ui.BackendUsers;
 
+import Ui.BackendUsers.BankingServices.BankingServController;
 import Ui.BackendUsers.MusicProffesionals.MusicProfController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -43,6 +44,14 @@ public class MasterController {
 
     }
     public void handleBankingServButton(){
+        BankingServController bsc = new BankingServController();
+
+        try {
+            bsc.loadWindow();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
 
     }
     public void handleAdvertiserButton(){
