@@ -2,6 +2,7 @@ package Ui.BackendUsers;
 
 import Ui.BackendUsers.Advertiser.AdvertiserController;
 import Ui.BackendUsers.BankingServices.BankingServController;
+import Ui.BackendUsers.EventOrganisers.EventOrganisersController;
 import Ui.BackendUsers.MusicProffesionals.MusicProfController;
 import Ui.BackendUsers.TicketingServ.TicketingServController;
 import javafx.fxml.FXMLLoader;
@@ -74,7 +75,12 @@ public class MasterController {
 
     }
     public void handleEventOrgButton(){
-
+        EventOrganisersController eoc = new EventOrganisersController();
+        try {
+            eoc.loadWindow();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
 
