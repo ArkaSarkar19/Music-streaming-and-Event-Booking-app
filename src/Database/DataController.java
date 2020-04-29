@@ -190,7 +190,7 @@ public class DataController {
         connection = con.getConnection();
         if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
         Statement stmt = connection.createStatement();
-        String query = "insert into USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "')";
+        String query = "insert into USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "' ,"  + null + ")";
         System.out.println(query);
         stmt.executeUpdate(query);
         query = "insert into USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
