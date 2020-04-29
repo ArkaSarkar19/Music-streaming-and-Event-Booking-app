@@ -115,6 +115,9 @@ public class AllEvents {
             Rectangle I = new Rectangle();
             I.setFill(ImP);
             I.setY(570);
+            I.setArcWidth(15);
+            I.setArcHeight(15);
+
             if( i != 0 )
                 I.setX(MainPainX);
             else
@@ -269,6 +272,7 @@ public class AllEvents {
         RightArrowNP.setStyle("-fx-background-color: #FFFFFF;");
         //////////////////////////////////////////////////////////////////////////////////////////
 
+        root.setStyle("-fx-background-image: url('Resources/bg.jpg');  -fx-graphic-size:1280px 720px ;");
         root.getChildren().addAll(Home,BookEvents,Logo,listViewCen, listViewNear,FindPlaces,LeftArrow,RightArrow,LeftArrowNP,RightArrowNP,EVI);
         root.setBackground(new Background(new BackgroundFill(Color.color(12/255,12/255,12/255,1), CornerRadii.EMPTY, Insets.EMPTY)));
         Scene scene = new Scene(root, 1280, 720);

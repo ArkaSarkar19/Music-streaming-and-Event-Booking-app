@@ -84,7 +84,7 @@ public class SelectShow {
         AnP.opacityProperty();
         h.getChildren().addAll(I,v);
         AnP.getChildren().addAll(h);
-        AnP.setStyle("-fx-background-image: url('/ConcertResources/black.png')");
+        AnP.setStyle("-fx-background-image: url('Resources/bg.jpg'); -fx-graphic-size:300px 400px ;");
         return AnP;
     }
 
@@ -401,6 +401,7 @@ public class SelectShow {
 
         /////////////////////////////////Showing the Screen with Places////////////////////////
         if( flag[0] == false ) {
+            root.setStyle("-fx-background-image: url('Resources/bg.jpg'); -fx-graphic-size:1280px 720px ;");
             root.getChildren().addAll(AllArtistMenuButton,PlacesMenuButton, From, To, FromDate ,ToDate ,Date, bookevent,eventName);
         }
         ///////////////////////////////////////////////////////////////////////////////////////
