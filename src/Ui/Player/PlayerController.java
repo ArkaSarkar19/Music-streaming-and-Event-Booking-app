@@ -6,10 +6,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.shape.Circle;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -21,11 +19,9 @@ import javax.sound.sampled.Clip;
 import java.io.IOException;
 import java.io.InputStream;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class PlayerController {
     @FXML
@@ -35,30 +31,36 @@ public class PlayerController {
     @FXML
     private Text songname, artistname, time, curtime, back;
 
-    boolean status = false, looping = false, liked = false;         //status: true - playing, false - paused  |  loop: true - loops song, false - no loop
-    boolean end = false, initialized = false;
-    public static ArrayList<Integer> songids = new ArrayList<Integer>();
-    Clip clip;
-    InputStream song_data;
-    long song_pos;
-    float songbarlen;
-    int cursong, song_num;
-    Stage curstage;
-    Scene curscene;
-    AudioInputStream ais;
-    Connection con;
+    private static boolean status = false, looping = false, liked = false;         //status: true - playing, false - paused  |  loop: true - loops song, false - no loop
+    private static ArrayList<Integer> songids = new ArrayList<Integer>();
+    private static Clip clip;
+    private static InputStream song_data;
+    private static long song_pos;
+    private static int cursong, song_num;
+    private static Stage curstage;
+    private static Connection con;
+
+    private Image play_but = new Image(getClass().getResourceAsStream("Player Icons/play.png"));
+    private Image pause_but = new Image(getClass().getResourceAsStream("Player Icons/pause.png"));
+    private Image like_but1 = new Image(getClass().getResourceAsStream("Player Icons/like1.png"));
+    private Image like_but2 = new Image(getClass().getResourceAsStream("Player Icons/like2.png"));
+    private Image loop_but1 = new Image(getClass().getResourceAsStream("Player Icons/loop1.png"));
+    private Image loop_but2 = new Image(getClass().getResourceAsStream("Player Icons/loop2.png"));
+
 
     public void show_window() throws IOException
     {
         curstage = new Stage();
         Parent page = FXMLLoader.load(getClass().getResource("PlayerScreen.fxml"));
         curstage.initModality(Modality.APPLICATION_MODAL);
-        curscene = new Scene(page);
+        Scene curscene = new Scene(page);
         curstage.setScene(curscene);
         curstage.setTitle("PLAYER");
         curstage.setResizable(false);
         curstage.show();
-
+        curstage.setOnCloseRequest(event -> {
+            this.exit();
+        });
     }
 
     private void create_playline()
@@ -72,7 +74,7 @@ public class PlayerController {
         while(status) {
             float pos = clip.getMicrosecondPosition() % (clip.getMicrosecondLength() + 1);
             float len = clip.getMicrosecondLength() + 1;
-            songbarlen = (float) ((pos / len) * lower_bar.getWidth());
+            float songbarlen = (float) ((pos / len) * lower_bar.getWidth());
             upper_bar.setWidth(songbarlen);
             double upperbarleft = lower_bar.getLayoutX();
             upper_bar.setLayoutX(upperbarleft);
@@ -107,9 +109,7 @@ public class PlayerController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-//        while(!initialized){
-//            System.out.println("this is the while loop");
-//        };
+
         System.out.println(songids.get(0));
         play_song(songids.get(0));
     }
@@ -124,7 +124,7 @@ public class PlayerController {
             songname.setText(rs.getString("title"));
             artistname.setText(rs.getString("name"));
 
-            sql = "select bitdata from SONG_DATA limit " + song_id + ",1";
+            sql = "select bitdata from SONG_DATA limit " + (song_id-1) + ",1";
             smt = con.prepareStatement(sql);
             rs = smt.executeQuery(sql);
             rs.next();
@@ -141,7 +141,7 @@ public class PlayerController {
         try {
             System.gc();
             setsongdata(song_id);
-            ais = AudioSystem.getAudioInputStream(song_data);
+            AudioInputStream ais = AudioSystem.getAudioInputStream(song_data);
             clip = AudioSystem.getClip();
             clip.open(ais);
             clip.loop(Clip.LOOP_CONTINUOUSLY);
@@ -160,14 +160,14 @@ public class PlayerController {
             song_pos = clip.getMicrosecondPosition();
             clip.stop();
             status = false;
-            play.setImage(new Image(getClass().getResourceAsStream("@Assets/Icons/Player Icons/pause.png")));
+            play.setImage(play_but);
         }
         else
         {
             clip.setMicrosecondPosition(song_pos % clip.getMicrosecondLength());
             clip.start();
             status = true;
-            play.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/play.png")));
+            play.setImage(pause_but);
             create_playline();
         }
     }
@@ -175,13 +175,13 @@ public class PlayerController {
     public void next_button()
     {
         cursong++;
-        if(cursong > song_num)
-            cursong = 1;
+        if(cursong >= song_num)
+            cursong = 0;
         clip.stop();
         if(!status)
         {
             status = true;
-            play.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/play.png")));
+            play.setImage(play_but);
             create_playline();
         }
         status = false;
@@ -196,13 +196,12 @@ public class PlayerController {
         {
             cursong--;
             if(cursong < 0)
-                cursong = song_num;
+                cursong = song_num - 1;
             clip.stop();
             if(!status)
             {
                 status = true;
-                Image playing = new Image(getClass().getResourceAsStream("Assets\\Icons\\Player Icons\\pause.png"));
-                play.setImage(playing);
+                play.setImage(play_but);
                 create_playline();
             }
             status = false;
@@ -215,52 +214,52 @@ public class PlayerController {
         if(looping)
         {
             looping = false;
-            loop.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/loop2.png")));
+            loop.setImage(loop_but2);
         }
         else
         {
             looping = true;
-            loop.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/loop1.png")));
+            loop.setImage(loop_but1);
         }
     }
 
     public void like_button()
     {
         if(!liked) {
-            like.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/like2.png")));
+            like.setImage(like_but2);
             liked = true;
         }
         else
         {
-            like.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/like1.png")));
+            like.setImage(like_but1);
             liked = false;
         }
     }
 
     public void exit()
     {
-        end = true;
-        Stage cur = (Stage)(upper_bar.getScene().getWindow());
-        cur.close();
+        if(status)
+            clip.stop();
+        curstage.close();
     }
 
     public void play_single_song(int s_id){
         try {
+            songids.clear();
             songids.add(s_id);
             song_num = 1;
             show_window();
-            initialized = true;
         }catch(Exception e){e.printStackTrace();}
     }
     public void play_playlist(int p_id)
     {
         try {
-            this.initialized = true;
             DBConnection db = new DBConnection();
             con = db.getConnection();
             String sql = "select song_id from PLAYLIST_SONGS where playlist_id=" + p_id;
             Statement smt = con.prepareStatement(sql);
             ResultSet rs = smt.executeQuery(sql);
+            songids.clear();
             while(rs.next()) {
                 songids.add(rs.getInt("song_id"));
                 System.out.println(rs.getInt("song_id"));
