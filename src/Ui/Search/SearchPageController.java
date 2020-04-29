@@ -1,6 +1,7 @@
 package Ui.Search;
 
 import Database.DataController;
+import Ui.Player.PlayerController;
 import Ui.SearchFilter.SearchFilterController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -19,7 +20,8 @@ public class SearchPageController {
 
     public static String SearchFilterString = "null";
 
-    public VBox vbox;
+    public VBox vbox1;
+    public VBox vbox2;
     public Stage searchPage;
     public Scene scene;
     public Button goHomeButton;
@@ -30,6 +32,12 @@ public class SearchPageController {
     public ArrayList<M> finalResult;
     public ArrayList<M> data;
     public ArrayList<M> temp;
+
+    ArrayList<Button> bl1;
+    ArrayList<Button> bl2;
+
+    public Button b1;
+    public Button b2;
 
 //    public TextField queryText;
 
@@ -68,8 +76,14 @@ public class SearchPageController {
                 String tableName = "";
                 String columnName = "";
 
-                vbox = (VBox) scene.lookup("#vbox");
-                vbox.getChildren().clear();
+                vbox1 = (VBox) scene.lookup("#vbox1");
+                vbox1.getChildren().clear();
+                vbox1.setSpacing(10);
+
+                vbox2 = (VBox) scene.lookup("#vbox2");
+                vbox2.getChildren().clear();
+                vbox2.setSpacing(10);
+
                 ArrayList<Label> labelsList = new ArrayList<Label>();
                 ArrayList<Button> buttonsList = new ArrayList<Button>();
 
@@ -167,21 +181,41 @@ public class SearchPageController {
                     }
                 }
 
+                bl1 = new ArrayList<Button>();
+                bl2 = new ArrayList<Button>();
+
                 for (int h=0;h<finalResult.size();h++){
-                    if(h<21) {
+                    if(h<10) {
                         System.out.println(finalResult.get(h).value);
-                        Label l = new Label(finalResult.get(h).value);
-                        l.setId(finalResult.get(h).key + h);
-                        labelsList.add(l);
+                        Button b = new Button();
+                        b.setText(finalResult.get(h).value);
+//                        Label l = new Label(finalResult.get(h).value);
+                        b.setId(finalResult.get(h).key + h);
+                        bl1.add(b);
+
+                    }
+                    else if(h>=10 && h<20){
+                        System.out.println(finalResult.get(h).value);
+                        Button b = new Button(finalResult.get(h).value);
+//                        Label l = new Label(finalResult.get(h).value);
+                        b.setId(finalResult.get(h).key + h);
+                        bl2.add(b);
                     }
 
                 }
 
-                vbox.getChildren().addAll(labelsList);
+                buttonsFunctionality(bl1,bl2);
+
+//                vbox.getChildren().addAll(labelsList);
+                vbox1.getChildren().addAll(bl1);
+                vbox2.getChildren().addAll(bl2);
 
                 data.clear();
                 finalResult.clear();
-                labelsList.clear();
+//                labelsList.clear();
+                buttonsList.clear();
+                bl1.clear();
+                bl2.clear();
 //                if(!vbox.getChildren().isEmpty()){
 //                    vbox.getChildren().clear();
 //                }
@@ -189,6 +223,10 @@ public class SearchPageController {
 
 
             });
+
+
+
+
 
         }
         catch (Exception e){
@@ -198,6 +236,29 @@ public class SearchPageController {
 
 
     }
+
+    public void buttonsFunctionality(ArrayList<Button> bl1,ArrayList<Button> bl2){
+        for (int i=0;i<bl1.size();i++){
+            b1 = bl1.get(i);
+            bl1.get(i).setOnAction(actionEvent -> {
+
+                OnButtonClickController c = new OnButtonClickController();
+                c.loadWindow(b1.getText());
+
+            });
+        }
+        for (int j=0;j<bl2.size();j++){
+            b2 = bl2.get(j);
+            bl2.get(j).setOnAction(actionEvent -> {
+
+                OnButtonClickController c = new OnButtonClickController();
+                c.loadWindow(b2.getText());
+
+            });
+        }
+    }
+
+
 
     public Boolean isSubstring(String s1, String s2)
     {

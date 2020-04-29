@@ -13,6 +13,53 @@ import java.util.*;
 public class DataController {
     public Connection connection;
 
+    public int getSongID(String name) throws MyException{
+        int songID=0;
+        String songIDString="";
+
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "select song_id from ALL_SONGS WHERE title = '" + name + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()) {
+                songIDString = rs.getString(1);
+            }
+            songID = Integer.parseInt(songIDString);
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return songID;
+    }
+
+    public String getBalance(int id) throws MyException{
+        String bal="";
+
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "SELECT amount from USER_WALLET WHERE user_id = " + id;
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()) {
+                bal = rs.getString(1);
+            }
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
+        return bal;
+    }
+
     public void updateUserData(ArrayList<String> editedData, User user) throws MyException{
         try {
             DBConnection con = new DBConnection();

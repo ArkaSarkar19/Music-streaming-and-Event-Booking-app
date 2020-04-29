@@ -36,9 +36,9 @@
                   <Font size="24.0" />
                </font>
             </Label>
-            <Label fx:id="profileUserPrefGenre" alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="424.0" textFill="#fcfcfc">
+            <Label fx:id="profileUserBalance" alignment="CENTER" contentDisplay="CENTER" prefHeight="58.0" prefWidth="424.0" textFill="#fcfcfc">
                <font>
-                  <Font size="36.0" />
+                  <Font size="26.0" />
                </font>
             </Label>
             <Button fx:id="editProfileButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="437.0" text="Edit Details" />

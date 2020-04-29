@@ -139,4 +139,15 @@ public class MainScreenController implements Serializable {
             e.printStackTrace();
         }
     }
+
+    public void handleYourPlayLists(){
+        try{
+            YourLibraryController p = new YourLibraryController();
+            p.loadwindow();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+
+        }
+    }
 }

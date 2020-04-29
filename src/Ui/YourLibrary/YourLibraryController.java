@@ -41,6 +41,8 @@ public class YourLibraryController {
         goHomeButton.setOnAction(actionEvent -> {
             yourPlaylistsWindow.close();
         });
+        Button b = (Button)scene.lookup("#userProfileButton");
+        b.setText(MainScreenController.getUser().getName());
 
     }
 
@@ -73,6 +75,23 @@ public class YourLibraryController {
             System.out.println(e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    public void handleArtistsButton(){
+        DataController db = new DataController();
+
+        try {
+            ArrayList<UserPlaylist> list  = db.getAllPlaylists(MainScreenController.getUser());
+
+        } catch (ConnectionInvalidException e) {
+            e.printStackTrace();
+        } catch (CannotAddPlaylsitException e) {
+            e.printStackTrace();
+        }
+
+    }
+    public void handleAlbumsButton(){
+
     }
 
 
