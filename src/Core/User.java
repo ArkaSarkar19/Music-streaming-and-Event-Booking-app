@@ -69,4 +69,20 @@ public class User{
     public String getGender() {
         return gender;
     }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setDOB(String DOB) {
+        this.DOB = DOB;
+    }
 }

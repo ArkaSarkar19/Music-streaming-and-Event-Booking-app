@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@ProfilePage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.ProfilePage.EditProfileController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../Resources/bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="64.0" layoutY="49.0" text="Edit Your Details!" textFill="#e8e8e8">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="116.0" fitWidth="178.0" layoutX="363.0" layoutY="148.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/logo.png" />
+         </image>
+      </ImageView>
+      <VBox layoutX="48.0" layoutY="132.0" prefHeight="148.0" prefWidth="221.0" spacing="15.0">
+         <children>
+            <TextField fx:id="nameField" promptText="Name" />
+            <TextField fx:id="countryField" promptText="Country" />
+            <TextField fx:id="emailField" promptText="Email" />
+            <TextField fx:id="dobField" promptText="DOB (YYYY-MM-DD)" />
+         </children>
+      </VBox>
+      <ImageView fitHeight="329.0" fitWidth="25.0" layoutX="322.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/line.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="applyButton" layoutX="124.0" layoutY="305.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="70.0" text="Apply" />
+      <Label fx:id="resultText" alignment="CENTER" contentDisplay="CENTER" layoutX="56.0" layoutY="357.0" prefHeight="17.0" prefWidth="221.0" textFill="#e1e1e1" />
+      <Label layoutX="102.0" layoutY="91.0" text="(No Field is Compulsory)" textFill="#b2b2b2" />
+      <Button fx:id="backButton" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="x" />
+   </children>
+</AnchorPane>

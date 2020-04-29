@@ -33,6 +33,8 @@ public class SelectShow {
     //////////////////////////Respective Column name to extract the Relevant Index's Features//////////////////////////////////////////
     String[] ColumnNameAndIndex = {"artist_id" ,"Artist_name", "song_num", "popularity", "perf_data", "sponsors" ,"ratings", "live_perf_id", "address", "name", "email", "contact", "venue", "date_time"};
     Stage window = new Stage();
+   public static Button bookevent  ;
+    ;
     ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     private StackPane function(ArrayList<String> strings, int horizontalGap, int verticalGap, int Index ) {
@@ -63,6 +65,7 @@ public class SelectShow {
         v.setMinWidth(500);
         v.setMaxWidth(500);
 
+
         Text t = new Text("Event"+" : "+ (Ind+1));
         t.setFill(Color.WHITE);
         t.setFont(Font.font("Verdana", FontWeight.BOLD,20));
@@ -80,7 +83,7 @@ public class SelectShow {
         AnP.opacityProperty();
         h.getChildren().addAll(I,v);
         AnP.getChildren().addAll(h);
-        AnP.setStyle("-fx-background-image: url('ConcertResources/black.png')");
+        AnP.setStyle("-fx-background-image: url('/ConcertResources/black.png')");
         return AnP;
     }
 
@@ -306,6 +309,37 @@ public class SelectShow {
         Date.setMinWidth(170);
         Date.setMinHeight(39.5);
 
+        bookevent = new Button("Book Event");
+        bookevent.setLayoutX(HorizontalGap+300);
+        bookevent.setLayoutY(VerticalGap+80);
+        bookevent.setMinWidth(170);
+        bookevent.setMinHeight(39.5);
+
+        TextField eventName = new TextField();
+        eventName.setPromptText("Event Name");
+        eventName.opacityProperty().setValue(.5);
+        eventName.setLayoutX(HorizontalGap+300);
+        eventName.setLayoutY(VerticalGap+160);
+        eventName.setMinWidth(170);
+        eventName.setMinHeight(39.5);
+
+        bookevent.setOnAction(actionEvent -> {
+            for(int i=0;i<FilteredList.size();i++){
+                for(int j=0;j<FilteredList.get(i).size();j++){
+                    System.out.print(FilteredList.get(i).get(j) + " ");
+                }
+                System.out.println();
+            }
+            System.out.println(eventName.getText());
+            int index = Integer.parseInt(eventName.getText()) - 1 ;
+            System.out.println(" ------------------- Event Selected -----------------");
+            for(int i=0;i<FilteredList.get(index).size();i++){
+                System.out.print(FilteredList.get(index).get(i) + " ");
+            }
+            System.out.println();
+        });
+
+
         int finalAllDates_index = AllDates_index;
         Date.setOnAction(e -> {
             if ( !From.getText().isEmpty() && !ToDate.getText().isEmpty() ) {
@@ -362,7 +396,7 @@ public class SelectShow {
 
         /////////////////////////////////Showing the Screen with Places////////////////////////
         if( flag[0] == false ) {
-            root.getChildren().addAll(AllArtistMenuButton,PlacesMenuButton, From, To, FromDate ,ToDate ,Date);
+            root.getChildren().addAll(AllArtistMenuButton,PlacesMenuButton, From, To, FromDate ,ToDate ,Date, bookevent,eventName);
         }
         ///////////////////////////////////////////////////////////////////////////////////////
         root.getStylesheets().add(getClass().getResource("SelectShow.css").toExternalForm());

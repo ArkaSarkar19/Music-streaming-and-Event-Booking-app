@@ -7,12 +7,14 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class ProfilePageController {
     public static Stage profilePage;
@@ -28,7 +30,12 @@ public class ProfilePageController {
     public Label profileUserPrefGenre;
 
     @FXML
+    public Button editProfileButton;
+
+    @FXML
     public ImageView profilePic;
+
+    public ArrayList<String> editedData;
 
     public static Scene scene;
     private User user;
@@ -63,9 +70,21 @@ public class ProfilePageController {
         profileUserEmail = (Label)scene.lookup("#profileUserEmail");
         profileUserEmail.setText("Email : " + user.getEmail());
 
+        editProfileButton = (Button)scene.lookup("#editProfileButton") ;
+        editProfileButton.setOnAction(actionEvent -> {
+            EditProfileController c = new EditProfileController();
+            try {
+                c.loadWindow(user);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        });
 
 
+    }
 
+    public void closeWindow(){
+        profilePage.close();
     }
 
 

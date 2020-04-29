@@ -19,10 +19,7 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -231,7 +228,13 @@ public class PlayerController {
     {
         end = true;
         Stage cur = (Stage)(upper_bar.getScene().getWindow());
+        try {
+            con.close();
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
         cur.close();
+
     }
 
     public void play_single_song(int s_id){
@@ -245,13 +248,13 @@ public class PlayerController {
     public void play_playlist(int p_id)
     {
         try {
+            show_window();
             String sql = "select song_id from ALL_PLAYLISTS where playlist_id=" + p_id;
             Statement smt = con.prepareStatement(sql);
             ResultSet rs = smt.executeQuery(sql);
             while(rs.next())
                 songids.add(rs.getInt("song_id"));
             song_num = songids.size();
-            show_window();
             initialized = true;
         }catch(Exception e)
         {e.printStackTrace();}

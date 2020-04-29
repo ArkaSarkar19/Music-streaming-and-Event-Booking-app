@@ -11,6 +11,61 @@ import java.util.Map;
 public class DataController {
     public Connection connection;
 
+    public void updateUserData(ArrayList<String> editedData, User user) throws MyException{
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+
+
+
+            String s1="";
+            String s2="";
+            String s3="";
+            String s4="";
+
+            for (int i=0;i<editedData.size();i++){
+                if(i==0){
+                    if(!editedData.get(i).equals("null")){
+                        s1 = "UPDATE USER SET name = '" + editedData.get(i) + "' Where user_id = " + user.getUser_id();
+                        stmt.executeUpdate(s1);
+                        user.setName(editedData.get(i));
+                    }
+                }
+                else if(i==1){
+                    if(!editedData.get(i).equals("null")){
+                        s2 = "UPDATE USER SET country = '" + editedData.get(i) + "' Where user_id = " + user.getUser_id() ;
+                        stmt.executeUpdate(s2);
+                        user.setCountry(editedData.get(i));
+                    }
+                }
+                else if(i==2){
+                    if(!editedData.get(i).equals("null")){
+                        s3 = "UPDATE USER SET email = '" + editedData.get(i) + "' Where user_id = " + user.getUser_id() ;
+                        stmt.executeUpdate(s3);
+                        user.setEmail(editedData.get(i));
+                    }
+                }
+                else if(i==4){
+                    if(!editedData.get(i).equals("null")){
+                        s4 = "UPDATE USER SET DOB = '" + editedData.get(i) + "' Where user_id = " + user.getUser_id() ;
+                        stmt.executeUpdate(s4);
+                        user.setDOB(editedData.get(i));
+                    }
+                }
+                System.out.println(editedData.get(i));
+            }
+
+//
+            System.out.println("SUCCESS");
+
+        }catch (SQLException e){
+            System.out.println("ERROR");
+            e.printStackTrace();
+        }
+    }
+    
     public ArrayList<M> getSingleColumnFromTable(String tableName, String columnName) throws MyException{
 
         ArrayList<M> data = null;
