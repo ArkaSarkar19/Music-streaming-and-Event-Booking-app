@@ -1,5 +1,7 @@
 package Ui.BookEvents;
 
+import Database.DataController;
+import Ui.MainPage.MainScreenController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -8,18 +10,18 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-
+import Exception.*;
 import java.io.IOException;
 
 public class BookEventController {
     public String ArtistName;
     public String Venue;
     public String DateTime;
-    public double Amount;
-    public double walletbalance;
-    public Stage bookEventsWindow;
+    public static double Amount;
+    public static double walletbalance;
+    public static Stage bookEventsWindow;
     public Scene scene;
-
+    public static int ticket_id;
     public Label artistName;
     public Label venue;
     public Label dateTime;
@@ -49,7 +51,17 @@ public class BookEventController {
     }
 
     public void handlePayNow(){
-
+        DataController db = new DataController();
+        try {
+            int trasaction_id = db.makeTransaction(MainScreenController.getUser(),Amount);
+            db.makeBooking(MainScreenController.getUser(),trasaction_id,ticket_id);
+            System.out.println("Booking made successfully");
+            bookEventsWindow.close();
+        } catch (ConnectionInvalidException e) {
+            e.printStackTrace();
+        } catch (InsufficientBalanceException e) {
+            e.printStackTrace();
+        }
     }
 
     public void setAmount(double amount) {
@@ -72,4 +84,7 @@ public class BookEventController {
         this.walletbalance = walletbalance;
     }
 
+    public void setTicket_id(int ticket_id) {
+        this.ticket_id = ticket_id;
+    }
 }

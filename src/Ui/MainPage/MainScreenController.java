@@ -3,6 +3,7 @@ package Ui.MainPage;
 import Core.SaveFileCache;
 import Core.User;
 import Ui.AddPlaylist.AddPlaylistController;
+import Ui.MyBookings.MyBookingsController;
 import Ui.ProfilePage.ProfilePageController;
 import Ui.Search.SearchPageController;
 import Ui.SignupLoginMain.LoginBox;
@@ -128,5 +129,14 @@ public class MainScreenController implements Serializable {
     public void handleEventsButton(){
         AllEvents ae = new AllEvents();
         ae.ALLEventsInterface();
+    }
+
+    public void handleMyBookings(){
+        MyBookingsController mbc = new MyBookingsController();
+        try {
+            mbc.loadWindow();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

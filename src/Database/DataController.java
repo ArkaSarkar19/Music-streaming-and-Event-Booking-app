@@ -8,10 +8,8 @@ import com.sun.glass.ui.EventLoop;
 
 import java.io.IOException;
 import java.sql.*;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+
 public class DataController {
     public Connection connection;
 
@@ -301,6 +299,7 @@ public class DataController {
         String artistName = list.get(1);
         String venue = list.get(12);
         String DateTime = list.get(13);
+        int ticket_id = 0;
         double amount = 0;
         double wallet = 0;
 
@@ -313,6 +312,7 @@ public class DataController {
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
             amount = rs.getFloat("amount");
+            ticket_id = rs.getInt("ticket_id");
             query = "select * from USER_WALLET where user_id = " + MainScreenController.getUser().getUser_id();
             ResultSet rs2 = stmt.executeQuery(query);
             rs2.next();
@@ -327,7 +327,7 @@ public class DataController {
         System.out.println("Date Time : " + DateTime);
         System.out.println("Amount " + amount);
         System.out.println("Wallet " + wallet);
-
+        System.out.println("Ticket ID : " + ticket_id);
 
         amount = (int)amount;
         BookEventController bec = new BookEventController();
@@ -336,6 +336,7 @@ public class DataController {
         bec.setDateTime(DateTime);
         bec.setVenue(venue);
         bec.setWalletbalance(wallet);
+        bec.setTicket_id(ticket_id);
         try {
             bec.loadWindow();
         } catch (IOException e) {
@@ -345,18 +346,77 @@ public class DataController {
 
     }
 
-    public void makeTransaction(User user, double amount) throws ConnectionInvalidException {
+    public int makeTransaction(User user, double amount) throws ConnectionInvalidException, InsufficientBalanceException {
+        DBConnection db = new DBConnection();
+        connection = db.getConnection();
+        Statement stmt = null;
+        String query;
+        int r = 0; //transaction id
+        try{
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            query = "start transaction";
+            System.out.println(query);
+            stmt.executeUpdate(query);
+
+             stmt = connection.createStatement();
+             query = "select * from USER_WALLET where user_id = " + user.getUser_id();
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+            double wallet = rs.getInt("amount");
+            if(wallet - amount < 0) throw new InsufficientBalanceException("Not Enough Balance in your account");
+            double balance = wallet - amount;
+
+            System.out.println("Amount : " + amount);
+            query = "update  USER_WALLET  set amount =  " + balance + " where user_id = " + user.getUser_id();
+            System.out.println("Balance : " + balance);
+            System.out.println(query);
+            stmt.executeUpdate(query);
+            Random rand = new Random();
+             r = rand. nextInt(9000000) + 1000000;
+
+            query = "insert into TRANSACTIONS values (" + r + ",'Wallet'"  + "," + 1 + "," + amount + "," + "'rupees'" + "," + "'2020-04-30 00:00:00'" + ")";
+            System.out.println(query);
+            stmt.executeUpdate(query);
+
+            query = "commit";
+            System.out.println(query);
+            stmt.executeUpdate(query);
+
+            System.out.println("Successfull");
+            connection.close();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+            System.out.println("something Went wrong");
+            query = "start transaction";
+            System.out.println(query);
+            try {
+                stmt.executeUpdate(query);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+            throwables.printStackTrace();
+        }
+        return r;
+    }
+
+    public void makeBooking(User user,int transaction_id, int ticket_id) throws ConnectionInvalidException {
         DBConnection db = new DBConnection();
         connection = db.getConnection();
         try{
             if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
 
             Statement stmt  = connection.createStatement();
-            String query = "select * from USER_WALLET where user_id = " + user.getUser_id();
-//            String query = "update  USER_WALLET  set amount = amount - " + amount + " where user_id = " + user.getUser_id();
-            ResultSet rs = stmt.executeQuery(query);
-            double wallet = rs.getInt("amount");
-
+            String query ;
+            Random rand = new Random();
+            int r = rand. nextInt(9000000) + 1000000;
+            System.out.println("Ticket ID : "  + ticket_id);
+            query = "insert into BOOKINGS values (" + r + "," + ticket_id + "," + user.getUser_id() + "," + transaction_id + ","  + "'confirmed'"+ ")";
+            System.out.println(query);
+            stmt.executeUpdate(query);
+            System.out.println("Successfull");
+            connection.close();
 
         } catch (SQLException throwables) {
             throwables.printStackTrace();

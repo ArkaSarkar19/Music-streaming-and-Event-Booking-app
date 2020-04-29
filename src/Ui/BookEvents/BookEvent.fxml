@@ -49,7 +49,7 @@
          </children>
       </VBox>
       <Button layoutX="501.0" layoutY="274.0" mnemonicParsing="false" onAction="#handlePayNow" stylesheets="@BookEvent.css" text="Pay Now" />
-      <Label fx:id="walletBalance" layoutX="394.0" layoutY="26.0" prefHeight="22.0" prefWidth="157.0" text="Wallet Balance : " textFill="#ca9797">
+      <Label fx:id="walletBalance" layoutX="394.0" layoutY="26.0" prefHeight="22.0" prefWidth="231.0" text="Wallet Balance : " textFill="#ca9797">
          <font>
             <Font name="Arial Black" size="14.0" />
          </font>
