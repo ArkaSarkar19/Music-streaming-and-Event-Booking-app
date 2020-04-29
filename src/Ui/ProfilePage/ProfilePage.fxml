@@ -41,7 +41,7 @@
                   <Font size="36.0" />
                </font>
             </Label>
-            <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" text="Button" />
+            <Button fx:id="editProfileButton" alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" prefHeight="39.0" prefWidth="437.0" text="Edit Details" />
          </children>
       </VBox>
    </children>

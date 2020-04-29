@@ -6,6 +6,9 @@
     -fx-red: #FF0000;
     -fx-color-1:#1976D2;
 }
+.root{
+    -fx-background-color: -fx-primary;
+}
 
 .button{
     -fx-text-fill: -fx-primarytext;
@@ -15,3 +18,13 @@
     -fx-background-radius: 20px;
     -fx-font-size: 12pt;
 }
+
+.button:hover{
+    -fx-text-fill: -fx-primarytext;
+    -fx-background-color: #454745;
+    -fx-border-color: -fx-secondary;
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-font-size: 12pt;
+}
+
