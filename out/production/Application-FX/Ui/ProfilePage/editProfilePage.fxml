@@ -28,10 +28,10 @@
       </ImageView>
       <VBox layoutX="48.0" layoutY="132.0" prefHeight="148.0" prefWidth="221.0" spacing="15.0">
          <children>
-            <TextField fx:id="nameField" promptText="Name" />
-            <TextField fx:id="countryField" promptText="Country" />
-            <TextField fx:id="emailField" promptText="Email" />
-            <TextField fx:id="dobField" promptText="DOB (YYYY-MM-DD)" />
+            <TextField fx:id="nameField" opacity="0.6" promptText="Name" />
+            <TextField fx:id="countryField" opacity="0.6" promptText="Country" />
+            <TextField fx:id="emailField" opacity="0.6" promptText="Email" />
+            <TextField fx:id="dobField" opacity="0.6" promptText="DOB (YYYY-MM-DD)" />
          </children>
       </VBox>
       <ImageView fitHeight="329.0" fitWidth="25.0" layoutX="322.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">

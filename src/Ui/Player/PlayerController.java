@@ -160,14 +160,14 @@ public class PlayerController {
             song_pos = clip.getMicrosecondPosition();
             clip.stop();
             status = false;
-            play.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/pause.png")));
+            play.setImage(new Image(getClass().getResourceAsStream("@Assets/Icons/Player Icons/pause.png")));
         }
         else
         {
             clip.setMicrosecondPosition(song_pos % clip.getMicrosecondLength());
             clip.start();
             status = true;
-            play.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/play.png")));
+            play.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/play.png")));
             create_playline();
         }
     }
@@ -181,7 +181,7 @@ public class PlayerController {
         if(!status)
         {
             status = true;
-            play.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/play.png")));
+            play.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/play.png")));
             create_playline();
         }
         status = false;
@@ -201,7 +201,7 @@ public class PlayerController {
             if(!status)
             {
                 status = true;
-                Image playing = new Image(getClass().getResourceAsStream("Assets\\Icons\\PlayerIcons\\pause.png"));
+                Image playing = new Image(getClass().getResourceAsStream("Assets\\Icons\\Player Icons\\pause.png"));
                 play.setImage(playing);
                 create_playline();
             }
@@ -215,24 +215,24 @@ public class PlayerController {
         if(looping)
         {
             looping = false;
-            loop.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/loop2.png")));
+            loop.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/loop2.png")));
         }
         else
         {
             looping = true;
-            loop.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/loop1.png")));
+            loop.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/loop1.png")));
         }
     }
 
     public void like_button()
     {
         if(!liked) {
-            like.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/like2.png")));
+            like.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/like2.png")));
             liked = true;
         }
         else
         {
-            like.setImage(new Image(getClass().getResourceAsStream("@../../Assets/Icons/Player Icons/like1.png")));
+            like.setImage(new Image(getClass().getResourceAsStream("@/Assets/Icons/Player Icons/like1.png")));
             liked = false;
         }
     }

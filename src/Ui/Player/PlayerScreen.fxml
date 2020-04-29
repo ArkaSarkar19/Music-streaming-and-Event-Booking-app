@@ -14,7 +14,7 @@
       <Rectangle fx:id="upper_bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="7.5" layoutX="262.0" layoutY="672.0" stroke="BLACK" strokeType="INSIDE" width="750.0" />
       <ImageView fx:id="play" fitHeight="68.0" fitWidth="39.0" layoutX="617.0" layoutY="585.0" onMouseClicked="#play_pause_button" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Assets/Icons/Player Icons/play.png" />
+            <Image url="@../../Assets/Icons/Player%20Icons/play.png" />
          </image>
       </ImageView>
       <ImageView fx:id="next" fitHeight="68.0" fitWidth="39.0" layoutX="697.0" layoutY="585.0" onMouseClicked="#next_button" pickOnBounds="true" preserveRatio="true">
