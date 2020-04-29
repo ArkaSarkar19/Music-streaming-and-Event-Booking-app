@@ -2,6 +2,7 @@ package Ui.Events;
 
 import Database.DataController;
 import Exception.MyException;
+import Ui.MainPage.MainScreenController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.EventHandler;
@@ -23,7 +24,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
-
+import Exception.*;
 
 //////////////////////////////It is just for test///////////////////////////////////////////
 
@@ -329,14 +330,18 @@ public class SelectShow {
                     System.out.print(FilteredList.get(i).get(j) + " ");
                 }
                 System.out.println();
+
             }
             System.out.println(eventName.getText());
             int index = Integer.parseInt(eventName.getText()) - 1 ;
-            System.out.println(" ------------------- Event Selected -----------------");
-            for(int i=0;i<FilteredList.get(index).size();i++){
-                System.out.print(FilteredList.get(index).get(i) + " ");
+            DataController db2 = new DataController();
+            try {
+                db2.getTicket(MainScreenController.getUser(),FilteredList.get(index));
+            } catch (ConnectionInvalidException e) {
+                e.printStackTrace();
             }
-            System.out.println();
+            window.close();
+            AllEvents.mainEventStage.close();
         });
 
 

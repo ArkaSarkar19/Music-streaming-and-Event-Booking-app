@@ -1,5 +1,6 @@
 package Ui.Player;
 
+import Database.DBConnection;
 import Database.DataController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -19,7 +20,10 @@ import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import java.io.IOException;
 import java.io.InputStream;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -33,7 +37,7 @@ public class PlayerController {
 
     boolean status = false, looping = false, liked = false;         //status: true - playing, false - paused  |  loop: true - loops song, false - no loop
     boolean end = false, initialized = false;
-    ArrayList<Integer> songids;
+    public static ArrayList<Integer> songids = new ArrayList<Integer>();
     Clip clip;
     InputStream song_data;
     long song_pos;
@@ -47,13 +51,14 @@ public class PlayerController {
     public void show_window() throws IOException
     {
         curstage = new Stage();
-        Parent page = FXMLLoader.load(getClass().getResource("/Ui/Player/PlayerScreen.fxml"));
+        Parent page = FXMLLoader.load(getClass().getResource("PlayerScreen.fxml"));
         curstage.initModality(Modality.APPLICATION_MODAL);
         curscene = new Scene(page);
         curstage.setScene(curscene);
         curstage.setTitle("PLAYER");
         curstage.setResizable(false);
         curstage.show();
+
     }
 
     private void create_playline()
@@ -102,21 +107,29 @@ public class PlayerController {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        while(!initialized);
+//        while(!initialized){
+//            System.out.println("this is the while loop");
+//        };
+        System.out.println(songids.get(0));
         play_song(songids.get(0));
     }
 
     private void setsongdata(int song_id)
     {
         try {
-            String sql = "select title, name, cover, bitdata from ALL_SONGS, ALL_ARTISTS, SONG_DATA where ALL_SONGS.song_id =" + song_id +" and ALL_SONGS.artist_id=ALL_ARTISTS.artist_id and SONG_DATA.song_id = ALL_SONGS.song_id";
+            String sql = "select title, name from ALL_SONGS, ALL_ARTISTS where ALL_SONGS.song_id="+ song_id +" and ALL_SONGS.artist_id=ALL_ARTISTS.artist_id";
             Statement smt = con.prepareStatement(sql);
             ResultSet rs = smt.executeQuery(sql);
             rs.next();
             songname.setText(rs.getString("title"));
             artistname.setText(rs.getString("name"));
-            coverart.setImage(new Image(rs.getBlob("cover").getBinaryStream()));
+
+            sql = "select bitdata from SONG_DATA limit " + song_id + ",1";
+            smt = con.prepareStatement(sql);
+            rs = smt.executeQuery(sql);
+            rs.next();
             song_data = rs.getBlob("bitdata").getBinaryStream();
+            
         }catch(Exception e)
         {e.printStackTrace();}
     }
@@ -162,8 +175,8 @@ public class PlayerController {
     public void next_button()
     {
         cursong++;
-        if(cursong >= song_num)
-            cursong = 0;
+        if(cursong > song_num)
+            cursong = 1;
         clip.stop();
         if(!status)
         {
@@ -183,7 +196,7 @@ public class PlayerController {
         {
             cursong--;
             if(cursong < 0)
-                cursong = song_num - 1;
+                cursong = song_num;
             clip.stop();
             if(!status)
             {
@@ -228,13 +241,7 @@ public class PlayerController {
     {
         end = true;
         Stage cur = (Stage)(upper_bar.getScene().getWindow());
-        try {
-            con.close();
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        }
         cur.close();
-
     }
 
     public void play_single_song(int s_id){
@@ -248,14 +255,19 @@ public class PlayerController {
     public void play_playlist(int p_id)
     {
         try {
-            show_window();
-            String sql = "select song_id from ALL_PLAYLISTS where playlist_id=" + p_id;
+            this.initialized = true;
+            DBConnection db = new DBConnection();
+            con = db.getConnection();
+            String sql = "select song_id from PLAYLIST_SONGS where playlist_id=" + p_id;
             Statement smt = con.prepareStatement(sql);
             ResultSet rs = smt.executeQuery(sql);
-            while(rs.next())
+            while(rs.next()) {
                 songids.add(rs.getInt("song_id"));
+                System.out.println(rs.getInt("song_id"));
+            }
             song_num = songids.size();
-            initialized = true;
+            show_window();
+
         }catch(Exception e)
         {e.printStackTrace();}
     }

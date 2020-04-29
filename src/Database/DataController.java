@@ -1,8 +1,12 @@
 package Database;
 import Core.*;
 import Exception.*;
+import Ui.BookEvents.BookEventController;
+import Ui.MainPage.MainScreenController;
 import Ui.Search.M;
+import com.sun.glass.ui.EventLoop;
 
+import java.io.IOException;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,7 +69,7 @@ public class DataController {
             e.printStackTrace();
         }
     }
-    
+
     public ArrayList<M> getSingleColumnFromTable(String tableName, String columnName) throws MyException{
 
         ArrayList<M> data = null;
@@ -231,8 +235,8 @@ public class DataController {
                 int playlist_id = rs.getInt("playlist_id");
                 int user_id  = rs.getInt("user_id");
                 String name = rs.getString("name");
-                int song_num  = rs.getInt("song_num");
-                UserPlaylist up = new UserPlaylist(user_id, playlist_id,name,song_num);
+//                int song_num  = rs.getInt("song_num");
+                UserPlaylist up = new UserPlaylist(user_id, playlist_id,name,0);
                 list.add(up);
             }
             System.out.println("Successfull");
@@ -280,5 +284,82 @@ public class DataController {
             e.printStackTrace();
         }
         return data;
+    }
+
+    public void getTicket(User user, ArrayList<String>  list ) throws ConnectionInvalidException {
+        System.out.println(" ------------------- Event Selected -----------------");
+        for(int i=0;i<list.size();i++){
+            System.out.print(list.get(i) + " ");
+        }
+        System.out.println();
+        System.out.println("by user --- >"+ user.getUser_id() + ", " + user.getName());
+        System.out.println();
+
+
+        int live_perf_id = Integer.parseInt(list.get(7));
+        int artist_id = Integer.parseInt(list.get(0));
+        String artistName = list.get(1);
+        String venue = list.get(12);
+        String DateTime = list.get(13);
+        double amount = 0;
+        double wallet = 0;
+
+
+        try{
+            DBConnection db = new DBConnection();
+            connection = db.getConnection();
+            Statement stmt = connection.createStatement();
+            String query = "select * from TICKETS where live_perf_id = " + live_perf_id;
+            ResultSet rs = stmt.executeQuery(query);
+            rs.next();
+            amount = rs.getFloat("amount");
+            query = "select * from USER_WALLET where user_id = " + MainScreenController.getUser().getUser_id();
+            ResultSet rs2 = stmt.executeQuery(query);
+            rs2.next();
+            wallet = rs2.getFloat("amount");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        System.out.println("Live Performance ID : "  + live_perf_id);
+        System.out.println("Artist ID : " + artist_id);
+        System.out.println("Artist Name : "  + artistName);
+        System.out.println("Venue : " + venue);
+        System.out.println("Date Time : " + DateTime);
+        System.out.println("Amount " + amount);
+        System.out.println("Wallet " + wallet);
+
+
+        amount = (int)amount;
+        BookEventController bec = new BookEventController();
+        bec.setAmount(amount);
+        bec.setArtistName(artistName);
+        bec.setDateTime(DateTime);
+        bec.setVenue(venue);
+        bec.setWalletbalance(wallet);
+        try {
+            bec.loadWindow();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void makeTransaction(User user, double amount) throws ConnectionInvalidException {
+        DBConnection db = new DBConnection();
+        connection = db.getConnection();
+        try{
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+
+            Statement stmt  = connection.createStatement();
+            String query = "select * from USER_WALLET where user_id = " + user.getUser_id();
+//            String query = "update  USER_WALLET  set amount = amount - " + amount + " where user_id = " + user.getUser_id();
+            ResultSet rs = stmt.executeQuery(query);
+            double wallet = rs.getInt("amount");
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
     }
 }

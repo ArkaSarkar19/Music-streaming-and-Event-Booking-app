@@ -3,6 +3,7 @@ package Ui.YourLibrary;
 import Core.UserPlaylist;
 import Database.DataController;
 import Ui.MainPage.MainScreenController;
+import Ui.Player.PlayerController;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -54,11 +55,14 @@ public class YourLibraryController {
                 list.get(i).display();
                 Button b = new Button(list.get(i).getName());
                 b.setId("playlistButton"+ i);
+                UserPlaylist p = list.get(i);
+                b.setOnAction(actionEvent -> {
+                    PlayerController pc = new PlayerController();
+                    pc.play_playlist(102);
+                });
                 buttonlist.add(b);
             }
-//            ScrollPane scrollPane = new ScrollPane(hbox);
-//            scrollPane.setId("Scrollpane");
-//            scrollPane.setFitToHeight(true);
+
             hbox.getChildren().addAll(buttonlist);
 
             activityWindow.getChildren().add(hbox);

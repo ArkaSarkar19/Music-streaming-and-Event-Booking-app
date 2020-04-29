@@ -37,7 +37,7 @@ public class AllEvents {
         mainEventStage ==> Page consisting of Main PlayList and Places near your Playlist
 
     */
-    Stage mainEventStage = new Stage();
+   public static Stage mainEventStage = new Stage();
 
     public void ALLEventsInterface(){
 
