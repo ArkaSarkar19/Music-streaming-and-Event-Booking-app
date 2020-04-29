@@ -194,4 +194,36 @@ public class DataController {
         DBConnection db = new DBConnection();
         return db.getConnection();
     }
+
+    public ArrayList<ArrayList<String>> ExecuteQuery(String query) throws MyException {
+        ArrayList<ArrayList<String>> data = new ArrayList<ArrayList<String>>();
+
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+
+            List<String> allTables = getAllTables();
+            for (String table : allTables)
+                System.out.println(table);
+
+            ResultSet rs = stmt.executeQuery(query);
+            ResultSetMetaData rsmd = rs.getMetaData();
+            int columnsNumber = rsmd.getColumnCount();
+
+            while (rs.next()) {
+                ArrayList<String> map = new ArrayList<>();
+                for (int i = 1; i <= columnsNumber; i++) {
+                    map.add(rs.getString(i));
+                }
+                data.add(map);
+            }
+            connection.close();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return data;
+    }
 }

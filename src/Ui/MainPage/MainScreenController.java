@@ -22,7 +22,7 @@ import javafx.stage.Stage;
 import Exception.SaveStateException;
 import java.io.IOException;
 import java.io.Serializable;
-
+import Ui.Events.*;
 public class MainScreenController implements Serializable {
     public Stage mainPageWindow;
     public Scene scene;
@@ -121,6 +121,12 @@ public class MainScreenController implements Serializable {
             p.loadwindow();
         } catch (IOException e) {
             e.printStackTrace();
+
         }
+    }
+
+    public void handleEventsButton(){
+        AllEvents ae = new AllEvents();
+        ae.ALLEventsInterface();
     }
 }
