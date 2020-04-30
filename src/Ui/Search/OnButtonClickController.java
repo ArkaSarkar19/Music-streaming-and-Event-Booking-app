@@ -1,5 +1,6 @@
 package Ui.Search;
 
+import Core.User;
 import Database.DataController;
 import Ui.Player.PlayerController;
 import javafx.fxml.FXMLLoader;
@@ -22,7 +23,7 @@ public class OnButtonClickController {
 
     public int songID;
 
-    public void loadWindow(String buttonText){
+    public void loadWindow(String buttonText, User user){
 
         try {
             stage = new Stage();
@@ -38,32 +39,38 @@ public class OnButtonClickController {
             e.printStackTrace();
         }
 
+        DataController dc = new DataController();
+        try {
+            songID = dc.getSongID(buttonText);
+            System.out.println(songID);
+        }
+        catch (Exception e){
+            System.out.println("Error");
+        }
+
+
         songNameLabel = (Label) scene.lookup("#songNameLabel") ;
         songNameLabel.setText(buttonText);
-
-        addToPlaylistButton = (Button)scene.lookup("#addToPlaylistButton") ;
-        addToPlaylistButton.setOnAction(actionEvent -> {
-            //write the code for add to playlist here.
-            //buttonText -> song name
-            System.out.println("hello1");
-        });
 
         playSongButton = (Button)scene.lookup("#playSongButton") ;
         playSongButton.setOnAction(actionEvent -> {
 
             System.out.println("hello2");
 
-            DataController dc = new DataController();
-            try {
-                songID = dc.getSongID(buttonText);
-                System.out.println(songID);
-            }
-            catch (Exception e){
-                System.out.println("Error");
-            }
 
             PlayerController pc = new PlayerController();
             pc.play_single_song(songID);
+
+        });
+
+        addToPlaylistButton = (Button)scene.lookup("#addToPlaylistButton") ;
+        addToPlaylistButton.setOnAction(actionEvent -> {
+            //write the code for add to playlist here.
+            //buttonText -> song name
+            System.out.println("hello1");
+
+            AllPlaylistsController apc = new AllPlaylistsController();
+            apc.loadWindow(user,songID);
 
         });
 

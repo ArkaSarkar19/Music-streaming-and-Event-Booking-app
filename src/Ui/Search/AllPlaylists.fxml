@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" stylesheets="@SearchPage.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.Search.AllPlaylistsController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../Resources/bg.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="84.0" layoutY="69.0" text="Select playlist" textFill="#eeeeee">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <VBox fx:id="vbox" layoutX="311.0" layoutY="16.0" prefHeight="370.0" prefWidth="275.0" spacing="10.0" />
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="59.0" layoutY="151.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Resources/logo.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="doneText" alignment="CENTER" contentDisplay="CENTER" layoutX="60.0" layoutY="320.0" prefHeight="30.0" prefWidth="200.0" textFill="#e1e1e1">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

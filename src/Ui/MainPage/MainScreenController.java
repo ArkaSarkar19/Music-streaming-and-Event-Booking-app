@@ -102,7 +102,7 @@ public class MainScreenController implements Serializable {
 
     public void handleSearchButton()  {
         SearchPageController searchController = new SearchPageController();
-        searchController.loadWindow();
+        searchController.loadWindow(MainScreenController.getUser());
 //        user.display();
 //        searchController.loadWindow();
     }

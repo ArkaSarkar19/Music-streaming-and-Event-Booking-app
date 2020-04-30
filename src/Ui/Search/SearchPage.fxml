@@ -35,9 +35,9 @@
       <Button fx:id="searchButton" layoutX="527.0" layoutY="113.0" mnemonicParsing="false" prefHeight="8.0" prefWidth="92.0" text="Search" />
       <Button layoutX="640.0" layoutY="113.0" mnemonicParsing="false" onAction="#handlesFilterButton" prefHeight="39.0" prefWidth="92.0" text="Filter" />
       <TextField fx:id="queryText" layoutX="297.0" layoutY="120.0" />
-      <VBox fx:id="vbox1" layoutX="282.0" layoutY="183.0" prefHeight="471.0" prefWidth="440.0" spacing="5.0" stylesheets="@SearchPage.css" />
+      <VBox fx:id="vbox1" layoutX="282.0" layoutY="183.0" prefHeight="471.0" prefWidth="440.0" spacing="5.0" />
       <VBox fx:id="vbox2" layoutX="746.0" layoutY="176.0" prefHeight="471.0" prefWidth="488.0" spacing="5.0" />
-      <Button fx:id="goHomeButton1" layoutX="35.0" layoutY="248.0" mnemonicParsing="false" onAction="#handleTopSongs" prefHeight="39.0" prefWidth="176.0" text="Top Songs" />
-      <Button fx:id="goHomeButton2" layoutX="35.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleTopArtists" prefHeight="39.0" prefWidth="176.0" text="Top Artists" />
+      <Button layoutX="35.0" layoutY="254.0" mnemonicParsing="false" onAction="#handleTopArtists" prefHeight="39.0" prefWidth="176.0" text="Top Artists" />
+      <Button layoutX="35.0" layoutY="340.0" mnemonicParsing="false" onAction="#handleTopSongs" prefHeight="39.0" prefWidth="176.0" text="Top Songs" />
    </children>
 </AnchorPane>

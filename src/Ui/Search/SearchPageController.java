@@ -1,5 +1,6 @@
 package Ui.Search;
 
+import Core.User;
 import Database.DBConnection;
 import Database.DataController;
 import Ui.Player.PlayerController;
@@ -47,7 +48,7 @@ public class SearchPageController {
 //    public TextField queryText;
 
 
-    public void loadWindow(){
+    public void loadWindow(User user){
         try{
             SearchFilterString = "null";
             searchPage = new Stage();
@@ -66,7 +67,6 @@ public class SearchPageController {
 
             searchButton = (Button)scene.lookup("#searchButton") ;
             searchButton.setOnAction(actionEvent -> {
-//                vbox1.getChildren().clear();
                 data = new ArrayList<M>();
                 finalResult = new ArrayList<M>();
                 String query = "";
@@ -210,7 +210,7 @@ public class SearchPageController {
 
                 }
 
-                buttonsFunctionality(bl1,bl2);
+                buttonsFunctionality(bl1,bl2,user);
 
 //                vbox.getChildren().addAll(labelsList);
                 vbox1.getChildren().addAll(bl1);
@@ -226,13 +226,7 @@ public class SearchPageController {
 //                    vbox.getChildren().clear();
 //                }
 
-
-
             });
-
-
-
-
 
         }
         catch (Exception e){
@@ -243,13 +237,13 @@ public class SearchPageController {
 
     }
 
-    public void buttonsFunctionality(ArrayList<Button> bl1,ArrayList<Button> bl2){
+    public void buttonsFunctionality(ArrayList<Button> bl1,ArrayList<Button> bl2,User user){
         for (int i=0;i<bl1.size();i++){
             b1 = bl1.get(i);
             bl1.get(i).setOnAction(actionEvent -> {
 
                 OnButtonClickController c = new OnButtonClickController();
-                c.loadWindow(b1.getText());
+                c.loadWindow(b1.getText(),user);
 
             });
         }
@@ -258,7 +252,7 @@ public class SearchPageController {
             bl2.get(j).setOnAction(actionEvent -> {
 
                 OnButtonClickController c = new OnButtonClickController();
-                c.loadWindow(b2.getText());
+                c.loadWindow(b2.getText(),user);
 
             });
         }
@@ -312,7 +306,7 @@ public class SearchPageController {
 //
 //    }
 
-    public void handleTopArtists(){
+  public void handleTopArtists(){
         vbox1.getChildren().clear();
         DBConnection db = new DBConnection();
         Connection connection = db.getConnection();

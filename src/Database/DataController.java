@@ -12,6 +12,25 @@ import java.util.*;
 
 public class DataController {
     public Connection connection;
+
+    public void addToPlaylist(int playlist_id, int song_id) throws MyException{
+
+        try {
+            System.out.println(playlist_id + " " + song_id);
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "INSERT INTO PLAYLIST_SONGS VALUES (" + playlist_id + "," + song_id + ")";
+            stmt.executeUpdate(query);
+            System.out.println("done");
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
     public static ArrayList<Advertisement>  ads = new ArrayList<Advertisement>();
     public int getSongID(String name) throws MyException{
         int songID=0;
