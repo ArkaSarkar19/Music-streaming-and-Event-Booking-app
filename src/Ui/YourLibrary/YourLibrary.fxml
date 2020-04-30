@@ -51,5 +51,6 @@
          </image>
       </ImageView>
       <AnchorPane fx:id="activityWindow" layoutX="228.0" layoutY="164.0" prefHeight="517.0" prefWidth="1010.0" stylesheets="@ActivityWindow.css" />
+      <AnchorPane fx:id="addWindow" layoutX="41.0" layoutY="429.0" prefHeight="250.0" prefWidth="140.0" stylesheets="@ActivityWindow.css" />
    </children>
 </AnchorPane>

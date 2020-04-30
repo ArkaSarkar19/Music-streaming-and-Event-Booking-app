@@ -12,7 +12,7 @@ import java.util.*;
 
 public class DataController {
     public Connection connection;
-
+    public static ArrayList<Advertisement>  ads = new ArrayList<Advertisement>();
     public int getSongID(String name) throws MyException{
         int songID=0;
         String songIDString="";
@@ -202,6 +202,14 @@ public class DataController {
 //            System.out.println("number of rows"+ rs.getRow());
             if(rs.getRow() == 0) throw new InvalidUsernamePassowordException("Invalid USERNAME or PASSWORD");
             User user = new User(rs.getInt("user_id"),rs.getString("name"),rs.getString("country"),rs.getString("email"),rs.getString("DOB"),rs.getString("gender"));
+
+            query = "SELECT * FROM ADVERTISEMENTS";
+            ResultSet rs2 = stmt.executeQuery(query);
+            while(rs2.next()){
+                Advertisement ad = new Advertisement(rs2.getInt(1),rs2.getInt(2));
+                ads.add(ad);
+                System.out.println(ad.ad_id + " " + ad.advertiser_id);
+            }
 
             connection.close();
             System.out.println("Login");

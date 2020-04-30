@@ -1,5 +1,6 @@
 package Ui.YourLibrary;
 
+import Core.Advertisement;
 import Core.UserPlaylist;
 import Database.DBConnection;
 import Database.DataController;
@@ -21,6 +22,7 @@ import javax.swing.text.html.ImageView;
 import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class YourLibraryController {
     public Stage yourPlaylistsWindow;
@@ -29,6 +31,7 @@ public class YourLibraryController {
     public Button albumsButton;
     public AnchorPane activityWindow;
     public Button goHomeButton;
+    public AnchorPane addWindow;
     public Scene scene;
 
     public void loadwindow() throws IOException {
@@ -46,6 +49,20 @@ public class YourLibraryController {
         });
         Button b = (Button)scene.lookup("#userProfileButton");
         b.setText(MainScreenController.getUser().getName());
+
+        addWindow = (AnchorPane) scene.lookup("#addWindow");
+        int n = DataController.ads.size();
+        Random rand = new Random();
+        int r = rand.nextInt(n)-1;
+        if(r<0) r = 0;
+        Advertisement ad = DataController.ads.get(r);
+        Button b2 =   new Button("Advertisement id : " +Integer.toString(ad.ad_id));
+        Button b3 =   new Button("Advertiser id : " + Integer.toString(ad.advertiser_id));
+        VBox vb = new VBox(30);
+        vb.getChildren().add(b2);
+        vb.getChildren().add(b3);
+
+        addWindow.getChildren().add(vb);
 
     }
 
@@ -69,7 +86,7 @@ public class YourLibraryController {
                 UserPlaylist p = list.get(i);
                 b.setOnAction(actionEvent -> {
                     PlayerController pc = new PlayerController();
-                    pc.play_playlist(102);
+                    pc.play_playlist(p.getPlaylist_id());
                 });
                 hbox.getChildren().add(b);
             }
