@@ -1,6 +1,7 @@
 package Ui.YourLibrary;
 
 import Core.UserPlaylist;
+import Database.DBConnection;
 import Database.DataController;
 import Ui.MainPage.MainScreenController;
 import Ui.Player.PlayerController;
@@ -11,11 +12,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import Exception.*;
 
 import javax.swing.text.html.ImageView;
+import javax.xml.crypto.Data;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -51,9 +54,15 @@ public class YourLibraryController {
 
         try {
             ArrayList<UserPlaylist> list  = db.getAllPlaylists(MainScreenController.getUser());
-            HBox hbox = new HBox(25);
+            VBox vb = new VBox(15);
+            HBox hbox =null;
             ArrayList<Button> buttonlist = new ArrayList<Button>();
             for(int i=0;i<list.size();i++){
+                if(i%6 == 0){
+                    hbox = new HBox(25);
+                    hbox.setId("box" + i);
+                    vb.getChildren().add(hbox);
+                }
                 list.get(i).display();
                 Button b = new Button(list.get(i).getName());
                 b.setId("playlistButton"+ i);
@@ -62,12 +71,11 @@ public class YourLibraryController {
                     PlayerController pc = new PlayerController();
                     pc.play_playlist(102);
                 });
-                buttonlist.add(b);
+                hbox.getChildren().add(b);
             }
 
-            hbox.getChildren().addAll(buttonlist);
 
-            activityWindow.getChildren().add(hbox);
+            activityWindow.getChildren().add(vb);
 
         } catch (ConnectionInvalidException e) {
             e.printStackTrace();
@@ -79,21 +87,67 @@ public class YourLibraryController {
 
     public void handleArtistsButton(){
         DataController db = new DataController();
-
+        activityWindow.getChildren().clear();
         try {
-            ArrayList<UserPlaylist> list  = db.getAllPlaylists(MainScreenController.getUser());
+                ArrayList<String> list = db.getArtistsUser();
+            VBox vb = new VBox(15);
+            HBox hbox =null;
+            ArrayList<Button> buttonlist = new ArrayList<Button>();
+            for(int i=0;i<list.size();i++){
+                if(i%6 == 0){
+                    hbox = new HBox(25);
+                    hbox.setId("box" + i);
+                    vb.getChildren().add(hbox);
+                }
+                Button b = new Button(list.get(i));
+//                b.setId("playlistButton"+ i);
+//                UserPlaylist p = list.get(i);
+//                b.setOnAction(actionEvent -> {
+//                    PlayerController pc = new PlayerController();
+//                    pc.play_playlist(102);
+//                });
+                hbox.getChildren().add(b);
+            }
 
+
+            activityWindow.getChildren().add(vb);
         } catch (ConnectionInvalidException e) {
-            e.printStackTrace();
-        } catch (CannotAddPlaylsitException e) {
             e.printStackTrace();
         }
 
     }
     public void handleAlbumsButton(){
+        DataController db = new DataController();
+        activityWindow.getChildren().clear();
+        try {
+            ArrayList<String> list = db.getALbumsUser();
+            VBox vb = new VBox(15);
+            HBox hbox =null;
+            ArrayList<Button> buttonlist = new ArrayList<Button>();
+            for(int i=0;i<list.size();i++){
+                if(i%6 == 0){
+                    hbox = new HBox(25);
+                    hbox.setId("box" + i);
+                    vb.getChildren().add(hbox);
+                }
+                Button b = new Button(list.get(i));
+//                b.setId("playlistButton"+ i);
+//                UserPlaylist p = list.get(i);
+//                b.setOnAction(actionEvent -> {
+//                    PlayerController pc = new PlayerController();
+//                    pc.play_playlist(102);
+//                });
+                hbox.getChildren().add(b);
+            }
+
+
+            activityWindow.getChildren().add(vb);
+        } catch (ConnectionInvalidException e) {
+            e.printStackTrace();
+        }
 
     }
-
-
-
 }
+
+
+

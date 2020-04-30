@@ -469,4 +469,64 @@ public class DataController {
             throwables.printStackTrace();
         }
     }
+
+    public ArrayList<String> getArtistsUser() throws ConnectionInvalidException {
+        DBConnection db = new DBConnection();
+        connection = db.getConnection();
+        ArrayList<String> list = new ArrayList<>();
+        try{
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+
+            Statement stmt  = connection.createStatement();
+            String query ;
+            Random rand = new Random();
+
+            query = "select name from ALL_ARTISTS where artist_id in (select artist_id from ALL_SONGS as S where S.artist_id = artist_id and S.song_id in (select song_id from ALL_SONGS where song_id in (select song_id from PLAYLIST_SONGS where playlist_id in (select playlist_id from USER_PLAYLISTS where user_id = " + MainScreenController.getUser().getUser_id() + ")) ))";
+
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                list.add(rs.getString("name"));
+                System.out.println(rs.getString("name"));
+            }
+            System.out.println("Successfull");
+            connection.close();
+            return list;
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return list;
+    }
+
+    public ArrayList<String> getALbumsUser() throws ConnectionInvalidException {
+        DBConnection db = new DBConnection();
+        connection = db.getConnection();
+        ArrayList<String> list = new ArrayList<>();
+        try{
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+
+            Statement stmt  = connection.createStatement();
+            String query ;
+            Random rand = new Random();
+
+            query = "select name from ALBUMS where artist_id in (select artist_id from ALL_SONGS as S where S.artist_id = artist_id and S.song_id in (select song_id from ALL_SONGS where song_id in (select song_id from PLAYLIST_SONGS where playlist_id in (select playlist_id from USER_PLAYLISTS where user_id = " + MainScreenController.getUser().getUser_id() + ")) ))";
+
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                list.add(rs.getString("name"));
+                System.out.println(rs.getString("name"));
+            }
+            System.out.println("Successfull");
+            connection.close();
+            return list;
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return list;
+    }
 }
