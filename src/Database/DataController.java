@@ -427,6 +427,7 @@ public class DataController {
         String query;
         int r = 0; //transaction id
         try{
+            stmt = connection.createStatement();
             if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
             query = "start transaction";
             System.out.println(query);
@@ -461,6 +462,12 @@ public class DataController {
             connection.close();
 
         } catch (SQLException throwables) {
+            try {
+                stmt = connection.createStatement();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+
             throwables.printStackTrace();
             System.out.println("something Went wrong");
             query = "start transaction";
