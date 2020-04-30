@@ -1,5 +1,6 @@
 package Ui.Search;
 
+import Database.DBConnection;
 import Database.DataController;
 import Ui.Player.PlayerController;
 import Ui.SearchFilter.SearchFilterController;
@@ -14,6 +15,10 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 public class SearchPageController {
@@ -61,6 +66,7 @@ public class SearchPageController {
 
             searchButton = (Button)scene.lookup("#searchButton") ;
             searchButton.setOnAction(actionEvent -> {
+//                vbox1.getChildren().clear();
                 data = new ArrayList<M>();
                 finalResult = new ArrayList<M>();
                 String query = "";
@@ -306,5 +312,48 @@ public class SearchPageController {
 //
 //    }
 
+    public void handleTopArtists(){
+        vbox1.getChildren().clear();
+        DBConnection db = new DBConnection();
+        Connection connection = db.getConnection();
+        try{
+            Statement stmt = connection.createStatement();
+            String query = "select name, (1 + (select count(*) from ALL_ARTISTS A where A.popularity>B.popularity)) as Ranking " +
+                    "from ALL_ARTISTS B " +
+                    "order by Ranking limit 10";
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                Button b = new Button();
+                b.setText(rs.getInt("Ranking") + " " + rs.getString("name"));
+                vbox1.getChildren().add(b);
+            }
 
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
+    public void handleTopSongs(){
+        vbox1.getChildren().clear();
+        DBConnection db = new DBConnection();
+        Connection connection = db.getConnection();
+        try{
+            Statement stmt = connection.createStatement();
+            String query = "select title, name, (1 + (select count(*) from ALL_SONGS A where A.likes>B.likes)) as Ranking "+
+            "from ALL_SONGS B, ALL_ARTISTS "+
+            "where B.artist_id = ALL_ARTISTS.artist_id "+
+            "order by Ranking limit 10";
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                Button b = new Button();
+                b.setText(rs.getInt("Ranking") + " " + rs.getString("title"));
+                vbox1.getChildren().add(b);
+            }
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
