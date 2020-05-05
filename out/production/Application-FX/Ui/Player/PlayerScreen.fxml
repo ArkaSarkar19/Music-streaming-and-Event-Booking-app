@@ -14,22 +14,22 @@
       <Rectangle fx:id="upper_bar" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="7.5" layoutX="262.0" layoutY="672.0" stroke="BLACK" strokeType="INSIDE" width="750.0" />
       <ImageView fx:id="play" fitHeight="68.0" fitWidth="39.0" layoutX="617.0" layoutY="585.0" onMouseClicked="#play_pause_button" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Assets/Icons/Player%20Icons/play.png" />
+            <Image url="@Player Icons/pause.png" />
          </image>
       </ImageView>
       <ImageView fx:id="next" fitHeight="68.0" fitWidth="39.0" layoutX="697.0" layoutY="585.0" onMouseClicked="#next_button" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Assets/Icons/Player Icons/next.png" />
+            <Image url="@Player Icons/next.png" />
          </image>
       </ImageView>
       <ImageView fx:id="prev" fitHeight="68.0" fitWidth="39.0" layoutX="537.0" layoutY="585.0" onMouseClicked="#prev_button" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Assets/Icons/Player Icons/prev.png" />
+            <Image url="@Player Icons/prev.png" />
          </image>
       </ImageView>
       <ImageView fx:id="loop" fitHeight="68.0" fitWidth="39.0" layoutX="967.0" layoutY="585.0" onMouseClicked="#loop_button" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Assets/Icons/Player Icons/loop1.png" />
+            <Image url="@Player Icons/loop1.png" />
          </image>
       </ImageView>
       <Text fx:id="curtime" fill="WHITE" layoutX="200.0" layoutY="684.0" strokeType="OUTSIDE" strokeWidth="0.0" text="0:00" textAlignment="CENTER" wrappingWidth="61.33673095703125">
@@ -42,24 +42,24 @@
             <Font size="24.0" />
          </font>
       </Text>
-      <Text fx:id="songname" fill="WHITE" layoutX="459.0" layoutY="526.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SONG NAME" textAlignment="CENTER" wrappingWidth="355.7366943359375">
+      <Text fx:id="songname" fill="WHITE" layoutX="44.0" layoutY="519.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SONG NAME" textAlignment="CENTER" wrappingWidth="1194.1366577148438">
          <font>
             <Font size="45.0" />
          </font>
       </Text>
       <ImageView fx:id="coverart" fitHeight="400.0" fitWidth="400.0" layoutX="437.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Resources/Albums/album1.jpg" />
+            <Image url="@../../Resources/Music%20Icons/random.png" />
          </image>
       </ImageView>
-      <Text fx:id="artistname" fill="WHITE" layoutX="459.0" layoutY="559.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist names" textAlignment="CENTER" wrappingWidth="355.7366943359375">
+      <Text fx:id="artistname" fill="WHITE" layoutX="184.0" layoutY="557.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Artist names" textAlignment="CENTER" wrappingWidth="915.7366333007812">
          <font>
             <Font size="25.0" />
          </font>
       </Text>
       <ImageView fx:id="like" fitHeight="68.0" fitWidth="39.0" layoutX="263.0" layoutY="585.0" onMouseClicked="#like_button" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../Assets/Icons/Player Icons/like1.png" />
+            <Image url="@Player Icons/like1.png" />
          </image>
       </ImageView>
       <Text fx:id="back" fill="WHITE" layoutX="27.0" layoutY="69.0" onMouseClicked="#exit" strokeType="OUTSIDE" strokeWidth="0.0" text="BACK" textAlignment="CENTER" wrappingWidth="117.336669921875">

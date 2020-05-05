@@ -7,16 +7,13 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="720.0" prefWidth="1280.0" stylesheets="@mainPageStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.MainPage.MainScreenController">
+<AnchorPane minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" stylesheets="@mainPageStyle.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Ui.MainPage.MainScreenController">
    <children>
-      <ImageView fitHeight="720.0" fitWidth="1280.0" pickOnBounds="true">
-         <image>
-            <Image url="@../../Resources/bg.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="79.0" fitWidth="150.0" layoutX="26.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="40.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0e0f1a" height="720.0" stroke="BLACK" strokeType="INSIDE" width="1280.0" />
+      <ImageView fitHeight="109.0" fitWidth="324.0" layoutX="18.0" layoutY="3.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="18.0" AnchorPane.topAnchor="3.0">
          <image>
             <Image url="@../../Resources/logo.png" />
          </image>
@@ -29,7 +26,7 @@
       <VBox layoutX="25.0" layoutY="378.0" prefHeight="99.0" prefWidth="150.0" spacing="15.0">
          <children>
             <Button id="addPlaylistButton" fx:id="addPlaylistButton" mnemonicParsing="false" onAction="#handleAddpPlaylistButton" prefHeight="39.0" prefWidth="151.0" stylesheets="@mainPageStyle.css" text="Add Playlist" />
-            <Button id="yourPlaylistsButton" fx:id="yourPlaylistsButton" mnemonicParsing="false" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Playlists" />
+            <Button id="yourPlaylistsButton" fx:id="yourPlaylistsButton" mnemonicParsing="false" onAction="#handleYourPlayLists" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Playlists" />
          </children>
       </VBox>
       <Label layoutX="70.0" layoutY="499.0" text="Events" textFill="#eeecec">
@@ -42,120 +39,116 @@
             <Image url="@../../Resources/user.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="616.0" fitWidth="1047.0" layoutX="202.0" layoutY="77.0" opacity="0.11" pickOnBounds="true" AnchorPane.leftAnchor="202.0" AnchorPane.rightAnchor="55.0" AnchorPane.topAnchor="77.0">
-         <image>
-            <Image url="@../../Resources/grey-bg.png" />
-         </image>
-      </ImageView>
+      <Rectangle arcHeight="25.0" arcWidth="25.0" fill="WHITE" height="613.0" layoutX="206.0" layoutY="85.0" opacity="0.15" stroke="BLACK" strokeType="INSIDE" width="1029.0" />
       <Button id="userProfileButton" fx:id="userProfileButton" layoutX="1101.0" layoutY="18.0" mnemonicParsing="false" onAction="#handleUserProfileButton" prefHeight="39.0" prefWidth="160.0" stylesheets="@mainPageStyle.css" text="User Name" AnchorPane.leftAnchor="1101.0" AnchorPane.rightAnchor="43.0" AnchorPane.topAnchor="18.0" />
       <HBox layoutX="230.0" layoutY="526.0" prefHeight="140.0" prefWidth="1013.0" spacing="15.0" stylesheets="@mainPageStyle.css" AnchorPane.leftAnchor="230.0" AnchorPane.rightAnchor="37.0" AnchorPane.topAnchor="526.0">
          <children>
-            <ImageView fitHeight="152.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="s1" fitHeight="152.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Albums/album1.jpg" />
+                  <Image url="@../../Resources/Album%20Art/everythingiwanted.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="153.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="s2" fitHeight="153.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Albums/album2.jpg" />
+                  <Image url="@../../Resources/Album%20Art/godzilla.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="s3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Albums/album3.jpg" />
+                  <Image url="@../../Resources/Album%20Art/badguy.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="s4" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Albums/album4.jpg" />
+                  <Image url="@../../Resources/Album%20Art/comatose.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="s5" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Albums/akbum5.jpg" />
+                  <Image url="@../../Resources/Album%20Art/bangarang.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="s6" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Albums/album6.jpg" />
+                  <Image url="@../../Resources/Album%20Art/shakeitoff.png" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <Label layoutX="230.0" layoutY="488.0" text="Recently Played" textFill="#eeecec">
+      <Label layoutX="230.0" layoutY="488.0" text="Top Singles" textFill="#eeecec">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <HBox layoutX="230.0" layoutY="326.0" prefHeight="140.0" prefWidth="1013.0" spacing="15.0" stylesheets="@mainPageStyle.css">
          <children>
-            <ImageView fitHeight="152.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="g1" fitHeight="152.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Charts/chart1.PNG" />
+                  <Image url="@../../Resources/Music%20Icons/hindi.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="153.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="g2" fitHeight="153.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Charts/chart2.PNG" />
+                  <Image url="@../../Resources/Music%20Icons/pop.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="g3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Charts/chart3.PNG" />
+                  <Image url="@../../Resources/Music%20Icons/hip%20hop.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="g4" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Charts/chart4.PNG" />
+                  <Image url="@../../Resources/Music%20Icons/edm.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="g5" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Charts/chart5.PNG" />
+                  <Image url="@../../Resources/Music%20Icons/90s.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="g6" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Charts/chart6.PNG" />
+                  <Image url="@../../Resources/Music%20Icons/rock.png" />
                </image>
             </ImageView>
          </children>
       </HBox>
-      <Label layoutX="230.0" layoutY="288.0" text="Charts" textFill="#eeecec">
+      <Label layoutX="230.0" layoutY="288.0" text="Top Genres" textFill="#eeecec">
          <font>
             <Font size="20.0" />
          </font>
       </Label>
       <HBox layoutX="230.0" layoutY="129.0" prefHeight="140.0" prefWidth="1013.0" spacing="15.0" stylesheets="@mainPageStyle.css">
          <children>
-            <ImageView fitHeight="152.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="a1" fitHeight="152.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Best%20of%20artists/artist1.PNG" />
+                  <Image url="@../../Resources/Artist%20Icons/eminem.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="153.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="a2" fitHeight="153.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Best%20of%20artists/artist2.PNG" />
+                  <Image url="@../../Resources/Artist%20Icons/linkinpark.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="a3" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Best%20of%20artists/artist3.PNG" />
+                  <Image url="@../../Resources/Artist%20Icons/billie.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="a4" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Best%20of%20artists/artist4.PNG" />
+                  <Image url="@../../Resources/Artist%20Icons/tswift.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="a5" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Resources/Best%20of%20artists/artist5.PNG" />
+                  <Image url="@../../Resources/Artist%20Icons/skillet.png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+            <ImageView fx:id="a6" fitHeight="150.0" fitWidth="200.0" onMouseClicked="#playartist" pickOnBounds="true" preserveRatio="true" styleClass="img">
                <image>
-                  <Image url="@../../Resources/Best%20of%20artists/artist6.PNG" />
+                  <Image url="@../../Resources/Artist%20Icons/skrillex.png" />
                </image>
             </ImageView>
          </children>
@@ -172,10 +165,10 @@
             <Button id="yourPlaylistsButton" fx:id="yourLibraryButton" mnemonicParsing="false" onAction="#handleYourLibraryButton" prefHeight="39.0" prefWidth="153.0" stylesheets="@mainPageStyle.css" text="Your Library" />
          </children>
       </VBox>
-      <VBox alignment="TOP_CENTER" layoutX="34.0" layoutY="543.0" prefHeight="162.0" prefWidth="138.0" spacing="15.0">
+      <VBox alignment="TOP_CENTER" layoutX="22.0" layoutY="543.0" prefHeight="162.0" prefWidth="153.0" spacing="15.0">
          <children>
-            <Button mnemonicParsing="false" onAction="#handleEventsButton" text="Browse Events" />
-            <Button mnemonicParsing="false" onAction="#handleMyBookings" text="My Bookings" />
+            <Button mnemonicParsing="false" onAction="#handleEventsButton" prefHeight="39.0" prefWidth="146.0" text="Events" />
+            <Button mnemonicParsing="false" onAction="#handleMyBookings" prefHeight="39.0" prefWidth="146.0" text="My Bookings" />
          </children>
       </VBox>
    </children>
