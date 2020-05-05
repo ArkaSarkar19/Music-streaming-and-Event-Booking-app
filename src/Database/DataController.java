@@ -4,7 +4,6 @@ import Exception.*;
 import Ui.BookEvents.BookEventController;
 import Ui.MainPage.MainScreenController;
 import Ui.Search.M;
-import com.sun.glass.ui.EventLoop;
 
 import java.io.IOException;
 import java.sql.*;
@@ -12,6 +11,53 @@ import java.util.*;
 
 public class DataController {
     public Connection connection;
+    public static ArrayList<Advertisement> ads = new ArrayList<Advertisement>();
+    public int getSongID(String name) throws MyException{
+        int songID=0;
+        String songIDString="";
+
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "select song_id from ALL_SONGS WHERE title = '" + name + "'";
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()) {
+                songIDString = rs.getString(1);
+            }
+            songID = Integer.parseInt(songIDString);
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+        return songID;
+    }
+
+    public String getBalance(int id) throws MyException{
+        String bal="";
+
+        try {
+            DBConnection con = new DBConnection();
+            connection = con.getConnection();
+            if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
+            Statement stmt = connection.createStatement();
+            String query = "SELECT amount from USER_WALLET WHERE user_id = " + id;
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()) {
+                bal = rs.getString(1);
+            }
+
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+        }
+
+
+        return bal;
+    }
 
     public void updateUserData(ArrayList<String> editedData, User user) throws MyException{
         try {
@@ -19,8 +65,6 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-
-
 
             String s1="";
             String s2="";
@@ -148,13 +192,21 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select * from USER as T  where email = '" + email + "' and '" + password + "' = (select password from USER_AUTH as S where S.user_id = T.user_id )";
+            String query = "Select * from USER as T  where email = '" + email + "' and '" + Base64.getEncoder().encodeToString(password.getBytes()) + "' = (select password from USER_AUTH as S where S.user_id = T.user_id )";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.last();
 //            System.out.println("number of rows"+ rs.getRow());
             if(rs.getRow() == 0) throw new InvalidUsernamePassowordException("Invalid USERNAME or PASSWORD");
             User user = new User(rs.getInt("user_id"),rs.getString("name"),rs.getString("country"),rs.getString("email"),rs.getString("DOB"),rs.getString("gender"));
+
+            query = "SELECT * FROM ADVERTISEMENTS";
+            ResultSet rs2 = stmt.executeQuery(query);
+            while(rs2.next()){
+                Advertisement ad = new Advertisement(rs2.getInt(1),rs2.getInt(2));
+                ads.add(ad);
+                System.out.println(ad.ad_id + " " + ad.advertiser_id);
+            }
 
             connection.close();
             System.out.println("Login");
@@ -193,7 +245,7 @@ public class DataController {
         String query = "insert into USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "' ,"  + null + ")";
         System.out.println(query);
         stmt.executeUpdate(query);
-        query = "insert into USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
+        query = "insert into USER_AUTH values(" + userAuth.getUser_id() + ",'" + Base64.getEncoder().encodeToString(userAuth.getPassword().getBytes()) + "')";
         System.out.println(query);
         stmt.executeUpdate(query);
         System.out.println("Successfull");
@@ -356,9 +408,10 @@ public class DataController {
             if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
             query = "start transaction";
             System.out.println(query);
-            stmt.executeUpdate(query);
+
 
              stmt = connection.createStatement();
+            stmt.executeUpdate(query);
              query = "select * from USER_WALLET where user_id = " + user.getUser_id();
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
@@ -421,5 +474,65 @@ public class DataController {
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    public ArrayList<String> getArtistsUser() throws ConnectionInvalidException {
+        DBConnection db = new DBConnection();
+        connection = db.getConnection();
+        ArrayList<String> list = new ArrayList<>();
+        try{
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+
+            Statement stmt  = connection.createStatement();
+            String query ;
+            Random rand = new Random();
+
+            query = "select name from ALL_ARTISTS where artist_id in (select artist_id from ALL_SONGS as S where S.artist_id = artist_id and S.song_id in (select song_id from ALL_SONGS where song_id in (select song_id from PLAYLIST_SONGS where playlist_id in (select playlist_id from USER_PLAYLISTS where user_id = " + MainScreenController.getUser().getUser_id() + ")) ))";
+
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                list.add(rs.getString("name"));
+                System.out.println(rs.getString("name"));
+            }
+            System.out.println("Successfull");
+            connection.close();
+            return list;
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return list;
+    }
+
+    public ArrayList<String> getALbumsUser() throws ConnectionInvalidException {
+        DBConnection db = new DBConnection();
+        connection = db.getConnection();
+        ArrayList<String> list = new ArrayList<>();
+        try{
+            if (connection == null) throw new ConnectionInvalidException("Connection not Establised");
+
+            Statement stmt  = connection.createStatement();
+            String query ;
+            Random rand = new Random();
+
+            query = "select name from ALBUMS where artist_id in (select artist_id from ALL_SONGS as S where S.artist_id = artist_id and S.song_id in (select song_id from ALL_SONGS where song_id in (select song_id from PLAYLIST_SONGS where playlist_id in (select playlist_id from USER_PLAYLISTS where user_id = " + MainScreenController.getUser().getUser_id() + ")) ))";
+
+            System.out.println(query);
+            ResultSet rs = stmt.executeQuery(query);
+            while(rs.next()){
+                list.add(rs.getString("name"));
+                System.out.println(rs.getString("name"));
+            }
+            System.out.println("Successfull");
+            connection.close();
+            return list;
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+        return list;
     }
 }
