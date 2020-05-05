@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 import javafx.stage.Modality;
@@ -185,7 +186,14 @@ public class PlayerController {
             create_playline();
         }
         status = false;
-        play_song(songids.get(cursong));
+        if(song_num == 1) {
+            clip.setMicrosecondPosition(0);
+            status = true;
+            clip.start();
+            create_playline();
+        }
+        else
+            play_song(songids.get(cursong));
     }
 
     public void prev_button()
@@ -205,7 +213,14 @@ public class PlayerController {
                 create_playline();
             }
             status = false;
-            play_song(songids.get(cursong));
+            if(song_num == 1) {
+                clip.setMicrosecondPosition(0);
+                status = true;
+                clip.start();
+                create_playline();
+            }
+            else
+                play_song(songids.get(cursong));
         }
     }
 
@@ -227,11 +242,24 @@ public class PlayerController {
     {
         if(!liked) {
             like.setImage(like_but2);
+            try {
+                String sql = "update ALL_SONGS set likes = likes + 1 where song_id = " + songids.get(cursong);
+
+                Statement smt = con.prepareStatement(sql);
+                smt.executeUpdate(sql);
+            }catch(Exception e)
+            {e.printStackTrace();}
             liked = true;
         }
         else
         {
             like.setImage(like_but1);
+            try {
+                String sql = "update ALL_SONGS set likes = likes - 1 where song_id = " + songids.get(cursong);
+                Statement smt = con.prepareStatement(sql);
+                smt.executeUpdate(sql);
+            }catch(Exception e)
+            {e.printStackTrace();}
             liked = false;
         }
     }
