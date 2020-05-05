@@ -4,7 +4,6 @@ import Exception.*;
 import Ui.BookEvents.BookEventController;
 import Ui.MainPage.MainScreenController;
 import Ui.Search.M;
-import com.sun.glass.ui.EventLoop;
 
 import java.io.IOException;
 import java.sql.*;
@@ -86,8 +85,6 @@ public class DataController {
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
 
-
-
             String s1="";
             String s2="";
             String s3="";
@@ -137,7 +134,6 @@ public class DataController {
     public ArrayList<M> getSingleColumnFromTable(String tableName, String columnName) throws MyException{
 
         ArrayList<M> data = null;
-
 
         try {
             data = new ArrayList<M>();
@@ -214,7 +210,7 @@ public class DataController {
             connection = con.getConnection();
             if(connection == null) throw new ConnectionInvalidException("Connection not Establised");
             Statement stmt = connection.createStatement();
-            String query = "Select * from USER as T  where email = '" + email + "' and '" + password + "' = (select password from USER_AUTH as S where S.user_id = T.user_id )";
+            String query = "Select * from USER as T  where email = '" + email + "' and '" + Base64.getEncoder().encodeToString(password.getBytes()) + "' = (select password from USER_AUTH as S where S.user_id = T.user_id )";
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.last();
@@ -267,7 +263,7 @@ public class DataController {
         String query = "insert into USER values("+user.getUser_id()+",'" + user.getName() + "','" + user.getCountry() + "','" + user.getEmail() + "','" + user.getDOB() + "','" + user.getGender() + "' ,"  + null + ")";
         System.out.println(query);
         stmt.executeUpdate(query);
-        query = "insert into USER_AUTH values(" + userAuth.getUser_id() + ",'" + userAuth.getPassword() + "')";
+        query = "insert into USER_AUTH values(" + userAuth.getUser_id() + ",'" + Base64.getEncoder().encodeToString(userAuth.getPassword().getBytes()) + "')";
         System.out.println(query);
         stmt.executeUpdate(query);
         System.out.println("Successfull");
@@ -433,8 +429,8 @@ public class DataController {
             System.out.println(query);
             stmt.executeUpdate(query);
 
-             stmt = connection.createStatement();
-             query = "select * from USER_WALLET where user_id = " + user.getUser_id();
+            stmt = connection.createStatement();
+            query = "select * from USER_WALLET where user_id = " + user.getUser_id();
             System.out.println(query);
             ResultSet rs = stmt.executeQuery(query);
             rs.next();
@@ -448,7 +444,7 @@ public class DataController {
             System.out.println(query);
             stmt.executeUpdate(query);
             Random rand = new Random();
-             r = rand. nextInt(9000000) + 1000000;
+            r = rand. nextInt(9000000) + 1000000;
 
             query = "insert into TRANSACTIONS values (" + r + ",'Wallet'"  + "," + 1 + "," + amount + "," + "'rupees'" + "," + "'2020-04-30 00:00:00'" + ")";
             System.out.println(query);
