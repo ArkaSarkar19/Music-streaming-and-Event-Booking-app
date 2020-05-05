@@ -27,7 +27,7 @@ public class ProfilePageController {
     @FXML
     public Label profileUserEmail;
     @FXML
-    public Label profileUserPrefGenre;
+    public Label profileUserBalance;
 
     @FXML
     public Button editProfileButton;
@@ -39,7 +39,7 @@ public class ProfilePageController {
 
     public static Scene scene;
     private User user;
-    public  void loadWindow(User user) {
+    public  void loadWindow(User user)  {
         try {
             this.user = user;
             profilePage = new Stage();
@@ -69,6 +69,18 @@ public class ProfilePageController {
 
         profileUserEmail = (Label)scene.lookup("#profileUserEmail");
         profileUserEmail.setText("Email : " + user.getEmail());
+
+        profileUserBalance = (Label)scene.lookup("#profileUserBalance");
+        DataController dc = new DataController();
+        String bal="";
+        try {
+            bal = dc.getBalance(user.getUser_id());
+        }
+        catch (Exception e){
+
+        }
+
+        profileUserBalance.setText("Balance : " + bal);
 
         editProfileButton = (Button)scene.lookup("#editProfileButton") ;
         editProfileButton.setOnAction(actionEvent -> {

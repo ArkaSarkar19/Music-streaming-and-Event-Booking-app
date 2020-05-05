@@ -44,14 +44,14 @@ public class LoginBox {
         Parent login = FXMLLoader.load(LoginBox.class.getResource("LoginBox.fxml"));
         Scene scene1 = new Scene(login, 1280,720);
         if(save !=null && save.getStatus()){
-            TextField email = (TextField)scene1.lookup("#loginusername"); //this is actaully user email
+            TextField email = (TextField)scene1.lookup("#loginusername"); //this is actually user email
             PasswordField password = (PasswordField)scene1.lookup("#loginpassword");
             email.setText(save.getUserEmail());
             password.setText(save.getUserPassword());
         }
         Button loginbutton = (Button)scene1.lookup("#loginbutton");
         loginbutton.setOnAction(event -> {
-            TextField email = (TextField)scene1.lookup("#loginusername"); //this is actaully user email
+            TextField email = (TextField)scene1.lookup("#loginusername"); //this is actually user email
             PasswordField password = (PasswordField)scene1.lookup("#loginpassword");
             try{
                 DataController cont = new DataController();
