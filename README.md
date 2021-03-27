@@ -24,7 +24,7 @@ All the transactions would be handled by the **banking services** affiliated wit
 * **Advertisers** - Willing to advertise their product on our app
 
 ## Stakeholder Queries 
-* Musicians - Bands, DJs, Singers, producers, ...
+* **Musicians - Bands, DJs, Singers, producers, ...**
   * Check their current popularity.
   * Find the number of views on their latest song.
   * Check out which are their most popular songs.
@@ -32,7 +32,7 @@ All the transactions would be handled by the **banking services** affiliated wit
   * Release their new song.
   * Remove their old album from 2003.
 
-* Users/Audience - Students, Families, Individuals, ...
+* **Users/Audience - Students, Families, Individuals, ...**
   * Find all the concerts happening in New Delhi in the next 3 months.
   * Make a new playlist.
   * Book tickets of a live concert
@@ -41,13 +41,13 @@ All the transactions would be handled by the **banking services** affiliated wit
   * Rate a Live Performance.
   * Search for a specific song.
 
-* Advertiser - Companies, Sponsors,..
+* **Advertiser - Companies, Sponsors,..**
   * Start a new ad campaign.
   * Calculate the advertising cost for one day.
   * Get the total money spent on ads this month.
   * Delete an advertisement.
   * Updating the current ad Display.
-* Event Organisers
+* **Event Organisers**
   * Get the price of an artist.
   * Check for the availability of an artist.
   * Find the best English band in the available budget.
@@ -57,14 +57,14 @@ All the transactions would be handled by the **banking services** affiliated wit
   * Setting a schedule for different artists.
   * Fetching the payment made to the Artist.
 
-* Bankers
+* **Bankers**
   * Get all the transactions made by a particular user in the past year.
   * Refund a particular transaction
   * Find all the users who have made transactions in a different currency.
   * Fetch the payment made by an advertiser.
   * Transferring amount from users to event organizers.
 
-* Ticketing Services
+* **Ticketing Services**
   * Sell tickets for a new live concert.
   * Get how many tickets are bought by somebody.
   * Get how many tickets of ₹ 5000/- were sold in the last concert by Linkin Park.
